@@ -1,0 +1,14 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_body"
+    "$bumpmap"     "models/common/c_am_com_body_tn"
+    "$detail"      "models/common/c_am_com_body_ao"
+    "$detailscale" "1"
+    "$lightwarptexture" "models/common/skinwarp"
+    "$halflambert" "1"
+    "$phong" "1"
+    "$phongfresnelranges"	"[1 2 3]"
+    "$phongexponenttexture" "models/common/c_am_com_body_mt"
+    $rimlight 1
+    $rimmask 1
+}

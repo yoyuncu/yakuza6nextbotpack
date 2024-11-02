@@ -1,0 +1,12 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_suit"
+    "$bumpmap" "models/yakuza6/kiryu/kiryu_suit_tn"
+    "$lightwarptexture" "models/common/lightwarp_metallic"
+    "$halflambert" "1"
+	"$phong" "1"
+	"$phongboost" ".5"
+    "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_suit_mt"
+    "$phongfresnelranges" "[1 2.5 3]"
+	"$phongtint" "[1 1 1]"
+}

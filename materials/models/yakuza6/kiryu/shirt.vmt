@@ -1,0 +1,15 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_shirt"
+    "$bumpmap"     "models/yakuza6/kiryu/kiryu_shirt_tn"
+    "$detail"      "models/yakuza6/kiryu/kiryu_shirt_rd"
+    "$detailscale"	"130 130"
+    $color2 "[.9 .9 .9]"
+    "$halflambert" "1"
+	"$phong" "1"
+	"$phongexponent" 10
+    "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_shirt_mt"
+    "$phongboost" ".5"
+	"$phongfresnelranges" "[1 2.5 3]"
+	"$phongtint" "{140 27 23}"
+}

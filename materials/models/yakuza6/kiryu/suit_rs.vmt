@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/c_com_suit_rd"
+	"$bumpmap"     "models/common/c_com_suit_rt"
+	"$basetexturetransform"	"center 1 1 scale 25 25 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 25 25 rotate 0 translate 0 0"
+	"$additive"	"1"
+	"$allowAlphaToCoverage" 1
+	"$color2"	"[0.0 0.0 0.0]"
+	"$phong" "1"
+	"$phongboost" ".1"
+	"$phongexponent" 10
+//	"$phongexponenttexture" "models/yakuza6/kiryu/kiryu_suit_rm"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges"	"[1 2.5 3]"	
+	"$phongtint" "[1 1 1]"
+}

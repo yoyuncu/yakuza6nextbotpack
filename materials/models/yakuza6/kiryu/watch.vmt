@@ -1,0 +1,16 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_watch"
+    "$bumpmap"     "models/yakuza6/kiryu/kiryu_watch_tn"
+    "$halflambert" "0"
+	"$nocull" 0
+    $phong				"1"
+	$phongboost			"2"
+    "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_watch_mt"
+    $phongtint "[1 1 1]"
+	$phongfresnelranges		"[6 9 10]"
+    "$allowAlphaToCoverage" 0
+    "$phongalbedotint" "1"
+    "$lightwarptexture" "models/common/lightwarp_metallic"
+    "$phongdisablehalflambert"    "1"
+}
