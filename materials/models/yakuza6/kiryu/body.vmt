@@ -10,5 +10,6 @@
     "$phongfresnelranges"	"[1 2 3]"
     "$phongexponenttexture" "models/common/c_am_com_body_mt"
     $rimlight 1
+    $rimlightboost 0.2
     $rimmask 1
 }
