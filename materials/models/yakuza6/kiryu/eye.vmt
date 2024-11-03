@@ -1,0 +1,12 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/common/c_com_eyea"
+    "$bumpmap"     "models/common/c_com_eyea_tn"
+    "$color2" "[1.6 1.6 1.6]"
+    "$phongexponent" "33"
+	"$phongalbedotint" 1
+	"$phong" "0"
+	"$phongboost"	1
+	"$phongfresnelranges"	"[1 1.05 1.25]"
+	"$phongfresnelranges"	"[1 2 3]"
+}
