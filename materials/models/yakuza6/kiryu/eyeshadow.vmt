@@ -1,9 +1,0 @@
-"VertexLitGeneric"
-{
-	"$basetexture" "models/common/c_com_eyeshadow"
-    $translucent 1
-	$phong "1"
-	$phongboost "1"
-    "$phongfresnelranges"			"[0.15 0.25 0.0525]"
-	$phongtint "{232 242 189}"
-}
