@@ -4,12 +4,15 @@
     "$bumpmap"     "models/common/c_am_com_body_tn"
     "$detail"      "models/common/c_am_com_body_ao"
     "$detailscale" "1"
+    $color2 "[.8 .8 .8]"
     "$lightwarptexture" "models/common/skinwarp"
     "$halflambert" "1"
     "$phong" "1"
-    "$phongfresnelranges"	"[1 2 3]"
+    "$phongboost" ".1"
+    "$phongexponent" "10"
+    "$phongfresnelranges" "[1 2.5 3]"
     "$phongexponenttexture" "models/common/c_am_com_body_mt"
     $rimlight 1
-    $rimlightboost 0.2
+    $rimlightboost 1
     $rimmask 1
 }

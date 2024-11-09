@@ -2,12 +2,15 @@
 {
 	"$basetexture" "models/yakuza6/kiryu/kiryu_face"
     "$bumpmap"     "models/yakuza6/kiryu/kiryu_face_tn"
+    $color2 "[.8 .8 .8]"	
     "$lightwarptexture" "models/common/skinwarp"
     "$halflambert" "1"
     "$phong" "1"
-	"$phongfresnelranges"	"[1 2 3]"
+    "$phongboost" ".1"
+    "$phongexponent" "10"
+    "$phongfresnelranges" "[1 2.5 3]"
     "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_face_mt"
     $rimlight 1
-    $rimlightboost 0.2
+    $rimlightboost 1
     $rimmask 1
 }
