@@ -1,0 +1,22 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_suit"
+    "$bumpmap" "models/yakuza6/kiryu/kiryu_suit_tn"
+	"$halflambert" "0"
+	"$nocull" 0
+	$phong				"1"
+	$phongboost			"2"
+	$phongexponent			"15"
+	$phongtint "[1 1 1]"
+	$phongfresnelranges		"[6 9 10]"
+
+"$allowAlphaToCoverage" 0
+
+"$phongalbedotint" "1"
+"$lightwarptexture" "models/common/lightwarp_metallic"
+"$phongexponenttexture" "models/yakuza6/kiryu/kiryu_suit_mt"
+
+"$phongdisablehalflambert"    "1"
+
+"$color2" "[.9 .9 .9]"
+}
