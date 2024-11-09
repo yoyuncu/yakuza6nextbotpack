@@ -34,7 +34,7 @@ ENT.EyeAngle = Angle(0, 0, 0)
 ENT.PossessionCrosshair = true
 ENT.PossessionEnabled = true
 ENT.PossessionMovement = POSSESSION_MOVE_CUSTOM
-ENT.PossessionViews = {{offset = Vector(0, 0, 30),distance = 130,eyepos=false},{offset = Vector(7.5, 0, 0),distance = 0,eyepos = true}}
+ENT.PossessionViews = {{offset = Vector(0, 0, 30),distance = 100,eyepos=false},{offset = Vector(7.5, 0, 0),distance = 0,eyepos = true}}
 ENT.PossessionBinds = {
 	[IN_ATTACK] = {{coroutine = false,onkeydown = function(self)
 	if self.Downing then
@@ -2493,7 +2493,7 @@ ENT.PossessionBinds = {
 		end)
 		self.TigerDrop = false
 		end
-	if self:IsDead() or self.DownSafety or self.DownSafety2 or self.Stunned or (self:GetSequenceName(self:GetSequence()) == "down_*") or (self.Dodge and not (self:GetSequenceName(self:GetSequence()) == "rush_sway_b" or self:GetSequenceName(self:GetSequence()) == "rush_sway_f" or self:GetSequenceName(self:GetSequence()) == "rush_sway_r" or self:GetSequenceName(self:GetSequence()) == "rush_sway_l" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_b" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_f" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_l" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_r" or (self:GetSequenceName(self:GetSequence()) == "beast_sway_b" or self:GetSequenceName(self:GetSequence()) == "beast_sway_f" or self:GetSequenceName(self:GetSequence()) == "beast_sway_l" or self:GetSequenceName(self:GetSequence()) == "beast_sway_r") and self.HeatC > 100 and self.HeatC < 200 or self:GetSequenceName(self:GetSequence()) == "dragon_sway_b" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_f" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_l" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_r")) or self.Taunting or self.Downed or self.Downing or self.StandingUp or self.Flinching or self.Dodge and self:GetCycle() > 0.25 or self.CanTiger or self.Torment and self.HeatC > 100 or self.Blocking and not (self:GetSequenceName(self:GetSequence()) == "dragonguard_hit" and self.HeatC > 100) and not (self:GetSequenceName(self:GetSequence()) == "brawler_guard_hit" and self.HeatC > 100) and not (self:GetSequenceName(self:GetSequence()) == "rush_guard_hit") then return end
+	if self:IsDead() or self.DownSafety or self.DownSafety2 or self.Stunned or (self:GetSequenceName(self:GetSequence()) == "down_*") or (self.Dodge and not (self:GetSequenceName(self:GetSequence()) == "rush_sway_b" or self:GetSequenceName(self:GetSequence()) == "rush_sway_f" or self:GetSequenceName(self:GetSequence()) == "rush_sway_r" or self:GetSequenceName(self:GetSequence()) == "rush_sway_l" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_b" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_f" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_l" or self:GetSequenceName(self:GetSequence()) == "brawler_sway_r" or (self:GetSequenceName(self:GetSequence()) == "beast_sway_b" or self:GetSequenceName(self:GetSequence()) == "beast_sway_f" or self:GetSequenceName(self:GetSequence()) == "beast_sway_l" or self:GetSequenceName(self:GetSequence()) == "beast_sway_r") and self.HeatC > 100 and self.HeatC < 200 or self:GetSequenceName(self:GetSequence()) == "dragon_sway_b" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_f" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_l" or self:GetSequenceName(self:GetSequence()) == "dragon_sway_r")) or self.Taunting or self.Downed or self.Downing or self.StandingUp or self.Flinching or self.Dodge and self:GetCycle() > 0.25 or self.CanTiger or self.Torment and self.HeatC > 100 or self.Blocking and not (self:GetSequenceName(self:GetSequence()) == "dragon_guard_hit" and self.HeatC > 100) and not (self:GetSequenceName(self:GetSequence()) == "brawler_guard_hit" and self.HeatC > 100) and not (self:GetSequenceName(self:GetSequence()) == "rush_guard_hit") then return end
 	if not self:IsRunning() and self.Cmb01 and not self.Cmb02 and not self.Cmb03 and not self.Cmb04 and not self.Cmb05 and not self.Cmb06 and not self.Cmb07 and not self.Cmb08 and not self.Cmb09 then
 	self.Cmb01 = false
 	local lockedOn = self:PossessionGetLockedOn()
@@ -2534,14 +2534,14 @@ ENT.PossessionBinds = {
 	self.SetupType = DMG_GENERIC
 	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_sway_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
-	elseif (self:GetSequenceName(self:GetSequence()) == "dragonguard_hit") then
+	elseif (self:GetSequenceName(self:GetSequence()) == "dragon_guard_hit") then
 	self.Damage = 10
 	self.Fin4 = true
 	self.Dodge = true
 	self.Guarding = false
 	self.SetupType = DMG_GENERIC
 	self:EmitSound("yakuzakiwami/kiryu/attack_l"..math.random(3)..".wav",85)
-	self:PlaySequenceAndMove("dragonguard_reverse",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+	self:PlaySequenceAndMove("dragon_guard_reverse",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Dodge = false
 	self.Fin4 = false
 	elseif (self:GetSequenceName(self:GetSequence()) == "flinch_body_lvl2_f") or (self:GetSequenceName(self:GetSequence()) == "flinch_body_lvl2_b") or (self:GetSequenceName(self:GetSequence()) == "flinch_head_lvl2_b") or (self:GetSequenceName(self:GetSequence()) == "flinch_head_lvl2_f") or (self:GetSequenceName(self:GetSequence()) == "flinch_leg_lvl2_b") or (self:GetSequenceName(self:GetSequence()) == "flinch_leg_lvl2_f") then
@@ -3439,7 +3439,7 @@ ENT.PossessionBinds = {
 		self.Dragon = false
 		self.Rush = true
 		self.Beast = false
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if self.ThemeSongLoop then 
 		self.ThemeSongLoop:Stop()
 		end
@@ -3501,7 +3501,7 @@ ENT.PossessionBinds = {
 		self.Dragon = true
 		self.Rush = false
 		self.Beast = false
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if self.ThemeSongLoop then 
 		self.ThemeSongLoop:Stop()
 		end
@@ -3526,7 +3526,7 @@ ENT.PossessionBinds = {
 		if !self.ThemeSongLoop8 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop8 = CreateSound(game.GetWorld(),"Kiryu/songs/funkgoeson_c.wav", filter)
+			self.ThemeSongLoop8 = CreateSound(game.GetWorld(),"kiryu/songs/kamuroagain.wav", filter)
 			self.ThemeSongLoop8:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop8:Play()
@@ -3591,7 +3591,7 @@ ENT.PossessionBinds = {
 		if not self.Combat then
 		self.Combat = true
 		if self.Rush then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop2 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
@@ -3614,7 +3614,7 @@ ENT.PossessionBinds = {
 		self.WalkAnimation = "rush_shift"
 		self.RunAnimation = "rush_run"
 		elseif self.Beast then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop3 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
@@ -3637,11 +3637,11 @@ ENT.PossessionBinds = {
 		self.WalkAnimation = "beast_shift"
 		self.RunAnimation = "beast_walk"
 		elseif self.Dragon then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop4 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop4 = CreateSound(game.GetWorld(),"Kiryu/songs/funkgoeson.wav", filter)
+			self.ThemeSongLoop4 = CreateSound(game.GetWorld(),"kiryu/songs/kamuroagain.wav", filter)
 			self.ThemeSongLoop4:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop4:Play()
@@ -3669,7 +3669,7 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("rush_taunt",1)
 		elseif self.Dragon then
 		self:EmitSound("yakuza0/kiryu/provo"..math.random(2)..".wav",100)
-		self:PlaySequenceAndMove("dragon_taunt"..math.random(2),1)
+		self:PlaySequenceAndMove("dragon_taunt",1)
 		end
 		self.Taunting = false
 		end
@@ -3772,14 +3772,14 @@ ENT.PossessionBinds = {
 	self.DownSafety = true
   	self:CICO(function()
 		self.DownSafety = false
-		self:PlaySequenceAndMove("de_standup_f",1)
+		self:PlaySequenceAndMove("kiryu_standup_f",1)
 		self.StandingUp = false
 	end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "de_down_b") and not self.DownSafety and self.Downed and not self:IsDead() then
 	self.DownSafety = true
   	self:CICO(function()
 		self.DownSafety = false
-		self:PlaySequenceAndMove("de_standup_b",1)
+		self:PlaySequenceAndMove("kiryu_standup_b",1)
 		self.StandingUp = false
 	end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "down_fatal_f_lp") and not self.DownSafety and self.Downed and not self:IsDead() then
@@ -3988,7 +3988,7 @@ ENT.PossessionBinds = {
 		self.Dodge2 = false
 		if self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.7)
-		self:PlaySequenceAndMove("dragon_sway_02_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_f_02",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
 		self:PlaySequenceAndMove("rush_sway_02_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -4002,7 +4002,7 @@ ENT.PossessionBinds = {
 		self.Dodge2 = false
 		if self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.7)
-		self:PlaySequenceAndMove("dragon_sway_02_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_r_02",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
 		self:PlaySequenceAndMove("rush_sway_02_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -4016,7 +4016,7 @@ ENT.PossessionBinds = {
 		self.Dodge2 = false
 		if self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.7)
-		self:PlaySequenceAndMove("dragon_sway_02_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_b_02",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
 		self:PlaySequenceAndMove("rush_sway_02_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -4030,7 +4030,7 @@ ENT.PossessionBinds = {
 		self.Dodge2 = false
 		if self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.7)
-		self:PlaySequenceAndMove("dragon_sway_02_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_l_02",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
 		self:PlaySequenceAndMove("rush_sway_02_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -4044,7 +4044,7 @@ ENT.PossessionBinds = {
    self:CICO(function()
 		self.Dodge2 = false
 		if self.Dragon then
-		self:PlaySequenceAndMove("dragon_sway_02_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_b_02",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:PlaySequenceAndMove("rush_sway_02_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
@@ -4064,7 +4064,7 @@ ENT.PossessionBinds = {
 		self.Dodge3 = false
 		if self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
-		self:PlaySequenceAndMove("dragon_sway_03_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_f_03",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Rush then
 		self:PlaySequenceAndMove("rush_sway_03_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
@@ -4083,7 +4083,7 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("rush_sway_03_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
-		self:PlaySequenceAndMove("dragon_sway_03_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_r_03",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 		self:SetCooldown("KiryuAttack",0)
 		self.Dodge = false
@@ -4099,7 +4099,7 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("rush_sway_03_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
-		self:PlaySequenceAndMove("dragon_sway_03_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_b_03",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 		self:SetCooldown("KiryuAttack",0)
 		self.Dodge = false
@@ -4116,7 +4116,7 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("rush_sway_03_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
-		self:PlaySequenceAndMove("dragon_sway_03_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_l_03",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 		self:SetCooldown("KiryuAttack",0)
 		self.Dodge = false
@@ -4133,7 +4133,7 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("rush_sway_03_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		elseif self.Dragon then
 		self:SetCooldown("KiryuDodgeAnim",0.3)
-		self:PlaySequenceAndMove("dragon_sway_03_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("dragon_sway_b_03",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 		self:SetCooldown("KiryuAttack",0)
 		self.Dodge = false
@@ -4182,13 +4182,13 @@ ENT.PossessionBinds = {
 	elseif self.Dragon then
 	self.GuardHP = 150
 	self.Blocking = true
-	self:PlaySequenceAndMove("dragonguard_start")
+	self:PlaySequenceAndMove("dragon_guard_st")
 	while self:GetPossessor():KeyDown(IN_DUCK) and self.Blocking do
-		self:PlaySequenceAndMove("dragonguard_loop")
+		self:PlaySequenceAndMove("dragon_guard_lp")
 	end
 	if self.Blocking then
 	self.Blocking = false
-	self:PlaySequenceAndMove("dragonguard_end")
+	self:PlaySequenceAndMove("dragon_guard_en")
 	end
 	end
 	end,onbuttondown=function(self)
@@ -4214,7 +4214,7 @@ ENT.PossessionBinds = {
 		self.Rush = false
 		self.Beast = true
 		self:EmitSound("yakuza0/style.wav",511)
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if self.ThemeSongLoop then 
 		self.ThemeSongLoop:Stop()
 		end
@@ -4410,20 +4410,20 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 					self:EmitSound("yakuzakiwami/weapons/fists/beast/hit"..math.random(8)..".wav")
 					end
 				elseif self.Dragon then
-					if self.Fin1 or self.Fin2 then
-					self:EmitSound("yakuzakiwami/weapons/fists/dragon/fin12.wav",85)
+					if self.Fin1 then
+					self:EmitSound("kiryu/battlesfx/fin1_"..math.random(2)..".wav",85)
 					self.Fin1 = false
+					elseif self.Fin2 then
+					self:EmitSound("kiryu/battlesfx/fin2_"..math.random(2)..".wav",85)
 					self.Fin2 = false
-					elseif self.Fin3 or self.Fin6 then
-					self:EmitSound("yakuzakiwami/weapons/fists/dragon/fin36.wav",85)
+					elseif self.Fin3 then
+					self:EmitSound("kiryu/battlesfx/fin3.wav",85)
 					self.Fin3 = false
-					self.Fin6 = false
-					elseif self.Fin4 or self.Fin5 then
-					self:EmitSound("yakuzakiwami/weapons/fists/dragon/fin45.wav",85)
+					elseif self.Fin4 then
+					self:EmitSound("kiryu/battlesfx/fin4.wav",85)
 					self.Fin4 = false
-					self.Fin5 = false
 					else
-					self:EmitSound("yakuzakiwami/weapons/fists/dragon/hit"..math.random(5)..".wav")
+					self:EmitSound("kiryu/battlesfx/hit"..math.random(5)..".wav")
 					end
 				end
 			end
@@ -4448,7 +4448,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 				elseif self.Beast then
 				self:EmitSound("yakuzakiwami/weapons/fists/beast/swing"..math.random(2)..".wav")
 				elseif self.Dragon then
-				self:EmitSound("yakuzakiwami/weapons/fists/brawler/swing"..math.random(2)..".wav")
+				self:EmitSound("kiryu/battlesfx/swing"..math.random(4)..".wav")
 				end
 			end
 			end
@@ -4494,11 +4494,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("kiryu/battlesfx/fin2_2.wav",85)
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("kiryu/battlesfx/swingkick"..math.random(3)..".wav")
 			end
 		end)
 	end
@@ -6194,7 +6194,7 @@ if e == "chyro" then
 		self.DFlinches = 0
 		self.AutoStand = false
 		self:SetCooldown("DownFlinch",2)
-		self:PlaySequenceAndMove("de_standup_f",1)
+		self:PlaySequenceAndMove("kiryu_standup_f",1)
 		self.StandingUp = false
 		else
 		if self.HeadPain then
@@ -6245,7 +6245,7 @@ if e == "chyro" then
 		self.DFlinches = 0
 		self.AutoStand = false
 		self:SetCooldown("DownFlinch",2)
-		self:PlaySequenceAndMove("de_standup_b",1)
+		self:PlaySequenceAndMove("kiryu_standup_b",1)
 		self.StandingUp = false
 		else
 		if self.HeadPain then
@@ -6798,7 +6798,7 @@ end
 function ENT:Stance()
 	if not self.Combat then
 	if self.Rush then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop2 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
@@ -6816,7 +6816,7 @@ function ENT:Stance()
 	self.WalkAnimation = "rush_shift"
 	self.RunAnimation = "rush_run"
 	elseif self.Beast then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop3 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
@@ -6834,11 +6834,11 @@ function ENT:Stance()
 	self.WalkAnimation = "beast_shift"
 	self.RunAnimation = "beast_run"
 	elseif self.Dragon then
-		if GetConVarNumber("drg_likeabrawler_kiryumusic") == 1 then
+		if GetConVarNumber("drg_yakuza6_kiryumusic") == 1 then
 		if !self.ThemeSongLoop4 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop4 = CreateSound(game.GetWorld(),"Kiryu/songs/funkgoeson.wav", filter)
+			self.ThemeSongLoop4 = CreateSound(game.GetWorld(),"kiryu/songs/kamuroagain.wav", filter)
 			self.ThemeSongLoop4:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop4:Play()
@@ -7257,7 +7257,7 @@ function ENT:OnTakeDamage(dmg)
 				if self.Rush then
 				self:PlaySequenceAndMove("rush_guard_hit",1)
 				elseif self.Dragon then
-				self:PlaySequenceAndMove("dragonguard_hit",1)
+				self:PlaySequenceAndMove("dragon_guard_hit",1)
 				end
 		end)
 			else
@@ -7344,7 +7344,7 @@ function ENT:OnTakeDamage(dmg)
 				self:SetCooldown("Flinch",math.random(8,13))
 				end
 				self.Flinches = math.min(12,self.Flinches + 1)
-				self:PlaySequenceAndMove("flinch_head_lvl2_f"..math.random(2),1)
+				self:PlaySequenceAndMove("flinch_head_lvl2_f",1)
 				end
 				else
 				self:PlaySequenceAndMove("down_standup_f",1)
@@ -7390,7 +7390,7 @@ function ENT:OnTakeDamage(dmg)
 				self:SetCooldown("Flinch",math.random(8,13))
 				end
 				self.Flinches = math.min(12,self.Flinches + 1)
-				self:PlaySequenceAndMove("flinch_head_lvl2_f"..math.random(2),1)
+				self:PlaySequenceAndMove("flinch_head_lvl2_f3",1)
 				end
 				else
 				self:PlaySequenceAndMove("down_standup_l",1)
@@ -7413,7 +7413,7 @@ function ENT:OnTakeDamage(dmg)
 				self:SetCooldown("Flinch",math.random(8,13))
 				end
 				self.Flinches = math.min(12,self.Flinches + 1)
-				self:PlaySequenceAndMove("flinch_head_lvl1_f"..math.random(2),1)
+				self:PlaySequenceAndMove("flinch_head_lvl1_f2",1)
 				end
 				else
 				self:PlaySequenceAndMove("down_standup_r",1)
@@ -7894,7 +7894,7 @@ function ENT:OnTakeDamage(dmg)
 				 self:PlaySequenceAndMove("piyori_head_f_st",1)
 				 self.Stunned = false
 				else
-				self:PlaySequenceAndMove("down_gut_f",1)
+				self:PlaySequenceAndMove("flinch_gut_brk_f",1)
 				end
 				self:AttackReset()
 			end)
@@ -7933,7 +7933,7 @@ function ENT:OnTakeDamage(dmg)
 				 self:PlaySequenceAndMove("piyori_head_b_st",1)
 				 self.Stunned = false
 				else
-				self:PlaySequenceAndMove("down_gut_b",1)
+				self:PlaySequenceAndMove("flinch_gut_brk_b",1)
 				end
 				self:AttackReset()
 			end)
@@ -8598,7 +8598,7 @@ function ENT:OnTakeDamage(dmg)
 		if dmt == 4 then
 		self:PlaySequenceAndMove("flinch_slash_hi_f"..math.random(2),1)
 		else
-		self:PlaySequenceAndMove("flinch_head_lvl2_f"..math.random(3),1)
+			self:PlaySequenceAndMove("flinch_head_lvl2_f"..math.random(3),1)
 		end
 		elseif fwd:DistToSqr(pos) < bck:DistToSqr(pos) and dmer < 26 then
 		if dmt == 4 then
@@ -8802,7 +8802,7 @@ function ENT:CustomThink()
 		end
 	end
 	if self:IsDead() then return end
-	if self.Downing and not self.WBSafety and not (self:GetSequenceName(self:GetSequence()) == "down_wall_bound_f" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_b" or self:GetSequenceName(self:GetSequence()) == "down_wall_f" or self:GetSequenceName(self:GetSequence()) == "down_wall_b" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_f_g" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_b_g") then
+	if self.Downing and not self.WBSafety and not (self:GetSequenceName(self:GetSequence()) == "down_wall_bound_f" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_b" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_f" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_b" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_f" or self:GetSequenceName(self:GetSequence()) == "down_wall_bound_b") then
 	local pos = self:GetPos()+self:GetUp()*60
 	local posf1 = self:GetPos()+self:GetForward()*-15+self:GetUp()*60
 	local posf2 = self:GetPos()+self:GetForward()*-15+self:GetUp()*60+self:GetRight()*13
@@ -8852,7 +8852,7 @@ function ENT:CustomThink()
 		self:CICO(function(self)
 		if self.WBProtection then
 		self:SetAngles(self.Walle:Angle())
-		self:PlaySequenceAndMove("down_wall_f")
+		self:PlaySequenceAndMove("down_wall_bound_f")
 		else
 		self:SetAngles(self.Walle:Angle())
 		self:PlaySequenceAndMove("down_wall_bound_f")
@@ -9139,7 +9139,7 @@ function ENT:CustomThink()
 		self.StyleSwitching = false
 		game.SetTimeScale(1)
 	end
-	if self:GetSequenceName(self:GetSequence()) == "standup_f" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "de_standup_b" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "down_fatal_b_en" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "down_fatal_f_en" and self.Dragon then
+	if self:GetSequenceName(self:GetSequence()) == "standup_f" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "kiryu_standup_b" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "down_fatal_b_en" and self.Dragon or self:GetSequenceName(self:GetSequence()) == "down_fatal_f_en" and self.Dragon then
 	self.GettUp = true
 	else
 	if self.GettUp then
