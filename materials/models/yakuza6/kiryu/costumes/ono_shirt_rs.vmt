@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_shirt_rd"
+	"$bumpmap"     "models/yakuza6/kiryu/kiryu_shirt_rt"
+	"$basetexturetransform"	"center 1 1 scale 130 130 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 130 130 rotate 0 translate 0 0"	
+	"$additive"	"1"
+	"$allowAlphaToCoverage" 1
+	"$color2"	"[0.0 0.0 0.0]"
+	"$phong" "1"
+	"$phongboost" ".5"
+	"$phongexponent" 10
+	"$phongexponenttexture" "models/yakuza6/kiryu/kiryu_shirt_rm"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges"	"[1 2.5 3]"	
+	"$phongtint" "{140 27 23}"
+}
