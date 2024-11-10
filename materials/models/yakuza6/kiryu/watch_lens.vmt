@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/kiryu_watch"
+    "$bumpmap"     "models/yakuza6/kiryu/kiryu_watch_tn"
+	"$envmap" "env_cubemap"
+	$additive 0
+	$alphatest 1
+	$envmapsphere 1
+	$allowAlphaToCoverage 1
+    "$envmaptint" "[ 1 1 1 ]"
+    "$halflambert" 1
+   "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_watch_mt"
+	"$phongalbedotint" 1
+	"$phong" "1" 
+	"$phongboost"	"1"
+	"$phongfresnelranges"	"[10 0 0]"
+}
