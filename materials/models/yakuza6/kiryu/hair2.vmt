@@ -1,8 +1,0 @@
-patch
-{
-	include "materials/models/yakuza6/kiryu/hair1.vmt"
-	insert 
-	{
-	"$basetexture" "models/yakuza6/kiryu/kiryu_hair"
-	}
-}
