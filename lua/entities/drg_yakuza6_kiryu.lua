@@ -2,7 +2,7 @@ if not DrGBase then return end
 ENT.Base = "drgbase_nextbot"
 
 -- Editables --
-ENT.PrintName = "Kazuma Kiryu (Kamurocho)"
+ENT.PrintName = "Kazuma Kiryu"
 ENT.Category = "Yakuza 6"
 ENT.Models = {"models/yakuza6/kazumakiryukamuro.mdl"}
 ENT.CollisionBounds = Vector(13, 13, 74)

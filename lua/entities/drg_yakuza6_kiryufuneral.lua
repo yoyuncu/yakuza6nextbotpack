@@ -2,9 +2,9 @@ if not DrGBase then return end
 ENT.Base = "drg_yakuza6_kiryu"
 
 -- Editables --
-ENT.PrintName = "Kazuma Kiryu (Shirtless)"
+ENT.PrintName = "Kazuma Kiryu (Funeral)"
 ENT.Category = "Yakuza 6"
-ENT.Models = {"models/yakuza6/kazumakiryukamuronaked.mdl"}
+ENT.Models = {"models/yakuza6/kazumakiryufuneral.mdl"}
 ENT.CollisionBounds = Vector(13, 13, 74)
 ENT.Factions = {FACTION_REBELS}
 
