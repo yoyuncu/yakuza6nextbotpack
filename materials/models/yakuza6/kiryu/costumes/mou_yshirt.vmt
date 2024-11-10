@@ -1,0 +1,16 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_mou_yshirts"
+    "$bumpmap"     "models/yakuza6/kiryu/costumes/kiryu_mou_yshirts_tn"
+    "$detail"      "models/common/c_com_cottonc_rd"
+    "$detailscale"	"130 130"
+    "$color2" "[.9 .9 .9]"	
+    "$detailblendmode" "0"
+    "$halflambert" "1"
+	"$phong" "1"
+	"$phongexponent" 10
+    "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_mou_yshirts_mt"
+    "$phongboost" ".1"
+	"$phongfresnelranges" "[1 2.5 3]"
+	"$phongtint" "[1 1 1]"
+}
