@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_demo"
+	"$bumpmap" "models/yakuza6/kiryu/costumes/kiryu_demo_tn"
+	"$color2" "{0 0 50}"
+	"$additive" 0
+	"$nocull" 1
+    "$detail"	"models/yakuza6/kiryu/costumes/kiryu_demo_himo_rd"
+	"$detailscale"	"[50.7 50.7]"
+			   "$phong" "1"
+			   "$phongboost"	".35"
+			   "$phongexponent" 3
+               "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_demo_mt"
+			   "$phongfresnelranges"	"[1 2.5 3]"
+}

@@ -1,0 +1,14 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_demo_zip"
+    "$bumpmap"     "models/common/saejima_zip_tn"
+    "$lightwarptexture" "models/common/lightwarp_metallic"
+    "$alphatest" "1"
+    "$allowAlphaToCoverage" 1
+                     "$phong" "1"
+                 "$phongboost" ".1"
+                 "$phongexponent" "10"
+                 "$phongfresnelranges" "[1 2.5 3]"
+				 "$color2" "[.8 .8 .8]"
+    "$phongexponenttexture" "models/common/saejima_zip_mt"
+}
