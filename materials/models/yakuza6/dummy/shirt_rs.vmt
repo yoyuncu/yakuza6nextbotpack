@@ -1,0 +1,16 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/c_com_cottonc_rd"
+	"$bumpmap"     "models/common/c_com_shirts_rt"
+	"$basetexturetransform"	"center 1 1 scale 35 35 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 35 35 rotate 0 translate 0 0"	
+	"$additive"	"1"
+	"$color2"	"[0.0 0.0 0.0]"
+	"$phong" "1"
+	"$phongboost" ".03"
+	"$phongexponent" 10
+    "$phongexponenttexture" "models/common/c_com_shirts_rm"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges"	"[10 10 10]"	
+	"$phongtint" "[1 1 1]"
+}

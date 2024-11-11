@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/common/c_am_com_yshirts"
+	"$bumpmap"     "models/common/c_am_com_yshirts_tn"
+	 $detail "models/common/c_com_cottonc_rd"
+	 $detailscale "[35 35]"
+	  "$phong" "1"
+	  "$phongboost" "1"
+	  "$phongexponent" 5
+      "$phongexponenttexture" "models/common/c_am_com_yshirtsSTO_mt"
+	  "$phongfresnelranges" "[1 3 6]"
+	  "$color2" "[.8 .8 .8]"
+}

@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/c_com_color_rd_07"
+	"$bumpmap"     "models/common/c_com_tiea_rt"
+	"$basetexturetransform"	"center 1 1 scale 50 50 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 50 50 rotate 0 translate 0 0"
+	"$additive"	"1"
+	"$allowAlphaToCoverage" 1
+	"$color2"	"[0.0 0.0 0.0]"
+	"$phong" "1"
+	"$phongboost" ".1"
+	"$phongexponent" 10
+//	"$phongexponenttexture" "models/common/c_com_tiea_rm"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges"	"[1 2.5 3]"	
+	"$phongtint" "[1 1 1]"
+}

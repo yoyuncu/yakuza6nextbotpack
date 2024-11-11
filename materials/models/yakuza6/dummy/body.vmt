@@ -1,0 +1,18 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/c_am_com_body"
+    "$bumpmap"     "models/common/c_am_com_body_tn"
+    "$detail"      "models/common/c_am_com_body_ao"
+    "$detailscale" "1"
+    $color2 "[.7 .7 .7]"
+    "$lightwarptexture" "models/common/skinwarp"
+    "$halflambert" "1"
+    "$phong" "1"
+    "$phongboost" ".1"
+    "$phongexponent" "10"
+    "$phongfresnelranges" "[1 2.5 3]"
+    "$phongexponenttexture" "models/common/c_am_com_body_mt"
+    $rimlight 1
+    $rimlightboost 1
+    $rimmask 1
+}

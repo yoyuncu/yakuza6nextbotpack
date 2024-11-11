@@ -1,0 +1,5 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/dummy_white"
+    "$bumpmap"     "models/common/dummy_nmap"
+}

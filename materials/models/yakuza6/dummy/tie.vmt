@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/common/c_com_color_rd_07"
+    "$bumpmap"     "models/common/c_am_com_yshirts_tn"
+    "$nocull" 0
+    "$detail"      "models/common/c_com_color_rd_07"
+	"$color2" "[.8 .8 .8]"	
+	"$detailscale"	"50 50"
+    "$detailblendmode" "0"
+    "$halflambert" "1"
+	"$phong" "1"
+    "$phongexponenttexture" "models/common/c_am_com_yshirtsSTO_mt"	
+	"$phongboost" ".1"
+	"$phongfresnelranges" "[1 2.5 3]"
+	"$phongtint" "[1 1 1]"
+	"$phongalbedotint" "1"	
+}
