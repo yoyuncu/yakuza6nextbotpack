@@ -7885,7 +7885,7 @@ function ENT:Stance()
 	elseif self.Box then
 	self.ShiftIdleAnimation = "box_shift_idle"
 	self.ShiftAnimation = "box_shift"
-	self.ShiftRunAnimation = "run"
+	self.ShiftRunAnimation = "box_run"
 	elseif self.KBox then
 	self.ShiftIdleAnimation = "kbx_shift_idle"
 	self.ShiftAnimation = "kbx_shift"
@@ -9862,7 +9862,7 @@ function ENT:OnTakeDamage(dmg)
 			if not self.Boss and math.random(3)==2 then
 			self.BodyPain = true
 			end
-			self:PlaySequenceAndMove("down_gut_f",1)
+			self:PlaySequenceAndMove("flinch_gut_brk_f",1)
 			end
 			self:AttackReset()
 		end)
@@ -9900,7 +9900,7 @@ function ENT:OnTakeDamage(dmg)
 			if not self.Boss and math.random(3)==2 then
 			self.BodyPain = true
 			end
-			self:PlaySequenceAndMove("down_gut_b",1)
+			self:PlaySequenceAndMove("flinch_gut_brk_b",1)
 			end
 			self:AttackReset()
 		end)
