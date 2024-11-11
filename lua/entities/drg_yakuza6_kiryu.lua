@@ -5097,7 +5097,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 	end
 if e == "chyro" then
 		if IsValid(self.Target) then
-		self:EmitSound("yakuzakiwami/bone3.wav",85)
+		self:EmitSound("common/bone3.wav",85)
 		self.HeatC = math.min(300,self.HeatC - 100)
 		self.Target:TakeDamage(125, self, self)
 		end
@@ -5112,14 +5112,14 @@ if e == "chyro" then
 		self:EmitSound("common/body"..math.random(7,8,9)..".wav")
 	end
 	if e == "bone" then
-		self:EmitSound("yakuzakiwami/bone"..math.random(2)..".wav")
+		self:EmitSound("common/bone"..math.random(2)..".wav")
 	end
 	if e == "fist_bump" then
 		self:EmitSound("Kiryu/e_atk"..math.random(1,4)..".wav")
 	end
 	if e == "boner" then
 		if IsValid(self.BoundTarget) then
-		self.BoundTarget:EmitSound("yakuzakiwami/bone3.wav")
+		self.BoundTarget:EmitSound("common/bone3.wav")
 		end
 	end
 	if e == "spattack" then
