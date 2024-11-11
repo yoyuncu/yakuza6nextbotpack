@@ -358,7 +358,7 @@ ENT.PossessionBinds = {
 	self.Cmb01 = true
 	self.Attacking = false
 	end)
-	elseif (self:GetSequenceName(self:GetSequence()) == "de_down_b" or self:GetSequenceName(self:GetSequence()) == "down_standup_b" or self:GetSequenceName(self:GetSequence()) == "down_fatal_f_lp") and (self.Dragon or self.Rush) and not self.DownSafety and self.Downed and not self:IsDead() then
+	elseif (self:GetSequenceName(self:GetSequence()) == "down_b" or self:GetSequenceName(self:GetSequence()) == "down_standup_b" or self:GetSequenceName(self:GetSequence()) == "down_fatal_f_lp") and (self.Dragon or self.Rush) and not self.DownSafety and self.Downed and not self:IsDead() then
 	self.DownSafety = true
 	self.Cmb01 = false
   	self:CICO(function()
@@ -3768,14 +3768,14 @@ ENT.PossessionBinds = {
 	self.StandingUp = false
 	end)
 	end
-	if (self:GetSequenceName(self:GetSequence()) == "de_down_f") and not self.DownSafety and self.Downed and not self:IsDead() then
+	if (self:GetSequenceName(self:GetSequence()) == "down_f") and not self.DownSafety and self.Downed and not self:IsDead() then
 	self.DownSafety = true
   	self:CICO(function()
 		self.DownSafety = false
 		self:PlaySequenceAndMove("kiryu_standup_f",1)
 		self.StandingUp = false
 	end)
-	elseif (self:GetSequenceName(self:GetSequence()) == "de_down_b") and not self.DownSafety and self.Downed and not self:IsDead() then
+	elseif (self:GetSequenceName(self:GetSequence()) == "down_b") and not self.DownSafety and self.Downed and not self:IsDead() then
 	self.DownSafety = true
   	self:CICO(function()
 		self.DownSafety = false
@@ -6207,7 +6207,7 @@ if e == "chyro" then
 		self.LegPain = false
 		self:PlaySequenceAndMove("down_f_pain_leg_st",1)
 		else
-		self:PlaySequenceAndMove("de_down_f",1)
+		self:PlaySequenceAndMove("down_f",1)
 		end
 		end
 		end
@@ -6258,7 +6258,7 @@ if e == "chyro" then
 		self.LegPain = false
 		self:PlaySequenceAndMove("down_b_pain_leg_st",1)
 		else
-		self:PlaySequenceAndMove("de_down_b",1)
+		self:PlaySequenceAndMove("down_b",1)
 		end
 		end
 		end
@@ -6467,7 +6467,7 @@ if e == "chyro" then
 		self:SetCooldown("DownFlinch",2)
 		self:PlaySequenceAndMove("down_fatal_f_en",1)
 		if self:IsDead() then
-		self:PlaySequenceAndMove("death"..math.random(7),1)
+		self:PlaySequenceAndMove("death"..math.random(5),1)
 		end
 		self.StandingUp = false
 		else
@@ -6506,7 +6506,7 @@ if e == "chyro" then
 		self:SetCooldown("DownFlinch",2)
 		self:PlaySequenceAndMove("down_fatal_b_en",1)
 		if self:IsDead() then
-		self:PlaySequenceAndMove("death"..math.random(7),1)
+		self:PlaySequenceAndMove("death"..math.random(5),1)
 		end
 		self.StandingUp = false
 		else
@@ -7684,7 +7684,7 @@ function ENT:OnTakeDamage(dmg)
 				elseif dmer.BoundG then
 				self:PlaySequenceAndMove("down_f_bound_g",1)
 				else
-				self:PlaySequenceAndMove("de_down_heavy_f",1)
+				self:PlaySequenceAndMove("down_heavy_f",1)
 				end
 				end
 				self:AttackReset()
@@ -7711,7 +7711,7 @@ function ENT:OnTakeDamage(dmg)
 				elseif dmer.BoundG then
 				self:PlaySequenceAndMove("down_b_bound_g",1)
 				else
-				self:PlaySequenceAndMove("de_down_heavy_b",1)
+				self:PlaySequenceAndMove("down_heavy_b",1)
 				end
 				end
 				self:AttackReset()
@@ -8702,7 +8702,7 @@ function ENT:OnDeath(dmg)
 			else
 				self:FaceInstant(dmg:GetReportedPosition())
 			end
-		self:PlaySequenceAndMove("de_down_heavy_f",1)
+		self:PlaySequenceAndMove("down_heavy_f",1)
 		elseif bck:DistToSqr(pos) < fwd:DistToSqr(pos) then
 			if IsValid(dmg:GetAttacker()) then
 				self:FaceInstant(dmg:GetAttacker():GetPos())
@@ -8711,10 +8711,10 @@ function ENT:OnDeath(dmg)
 				self:FaceInstant(dmg:GetReportedPosition())
 				self:SetAngles(self:GetAngles()+Angle(0,180,0))
 			end
-		self:PlaySequenceAndMove("de_down_heavy_b",1)
+		self:PlaySequenceAndMove("down_heavy_b",1)
 		end
 	else
-	self:PlaySequenceAndMove("death3")
+	self:PlaySequenceAndMove("death"..math.random(5),1)
 	end
 	SafeRemoveEntityDelayed(self,60)
 	self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
