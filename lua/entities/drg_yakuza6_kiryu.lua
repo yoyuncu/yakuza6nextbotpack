@@ -2708,7 +2708,7 @@ ENT.PossessionBinds = {
 	self.Attacking = true
 	if self.Dragon then
 	self.Damage = 50
-	self.SetupType = DMG_FALL // але
+	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("dragon_atk_run",1)
 	self.Attacking = false
 	self.Cmb01 = true
