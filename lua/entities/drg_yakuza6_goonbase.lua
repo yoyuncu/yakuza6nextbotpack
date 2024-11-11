@@ -1397,7 +1397,7 @@ ENT.PossessionBinds = {
 	end}},
 }
 ENT.IdleAnimation = "idle"..math.random(1,2)
-ENT.WalkAnimation = "kru_walk"
+ENT.WalkAnimation = "walk"..math.random(1,2,3)
 ENT.RunAnimation = "enc_run_a"
 ENT.JumpAnimation = "fall"
 ENT.SwayForwardAnimation = "sway_f"
