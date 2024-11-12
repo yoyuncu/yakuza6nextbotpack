@@ -70,7 +70,7 @@ ENT.PossessionBinds = {
 	self.Attacking = true
 	if self.Combat then
 	if self.Beast and not (self:GetSequenceName(self:GetSequence()) == "beast_guard_hit_f" or self:GetSequenceName(self:GetSequence()) == "beast_guard_hit_b") then
-	self:EmitSound("Kiryu/attack_l1.wav",85)
+	self:EmitSound("kiryu/attack_l1.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("beast_cmb01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -79,15 +79,15 @@ ENT.PossessionBinds = {
 	self.SetupType = DMG_GENERIC
 	self.Gowan = false
 	self.HeatC = math.min(300,self.HeatC - 50)
-	self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("beast_atk_guard_heavy",1)
 	elseif self.Rush then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("rush_cmb01",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Dragon then
-	self:EmitSound("Kiryu/attack_s1.wav",85)
+	self:EmitSound("kiryu/attack_s3.wav",85)
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("dragon_cmb01",self.DragonSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -104,17 +104,17 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Beast and (self:GetSequenceName(self:GetSequence()) == "beast_cmb01") then
-	self:EmitSound("Kiryu/attack_l2.wav",85)
+	self:EmitSound("kiryu/attack_l2.wav",85)
 	self.Damage = 35
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("beast_cmb02",1)
 	elseif self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb01") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("rush_cmb02",self.RushSpeed)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb01") then
-	self:EmitSound("Kiryu/attack_s2.wav",85)
+	self:EmitSound("kiryu/attack_s2.wav",85)
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("dragon_cmb02",self.DragonSpeed)
@@ -129,17 +129,17 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Beast and (self:GetSequenceName(self:GetSequence()) == "beast_cmb02") then
-	self:EmitSound("Kiryu/attack_l3.wav",85)
+	self:EmitSound("kiryu/attack_l3.wav",85)
 	self.Damage = 40
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("beast_cmb03",1)
 	elseif self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb02") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("rush_cmb03",self.RushSpeed)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb02") then
-	self:EmitSound("Kiryu/attack_s3.wav",85)
+	self:EmitSound("kiryu/attack_s4.wav",85)
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("dragon_cmb03",self.DragonSpeed)
@@ -154,12 +154,12 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb03") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("rush_cmb04",self.RushSpeed)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb03") then
-	self:EmitSound("Kiryu/attack_l1.wav",85)
+	self:EmitSound("kiryu/attack_l1.wav",85)
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("dragon_cmb04",self.DragonSpeed)
@@ -174,7 +174,7 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb04") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("rush_cmb05",self.RushSpeed)
@@ -189,7 +189,7 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb05") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 20
 	self.SetupType = DMG_GENERIC
 	self.Kick = true
@@ -206,7 +206,7 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb06") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self.Kick = true
@@ -223,7 +223,7 @@ ENT.PossessionBinds = {
 	self:CICO(function()
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb07") then
-	self:EmitSound("Kiryu/attack_s"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(3)..".wav",85)
 	self.Damage = 40
 	self.SetupType = DMG_GENERIC
 	self.Kick = true
@@ -344,14 +344,14 @@ ENT.PossessionBinds = {
 		self.Damage = 25
 		self.Downed = false
 		self.SetupType = DMG_DIRECT
-		self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 		self:PlaySequenceAndMove("dragon_atk_standup_f",1)
 		self.StandingUp = false
 		elseif self.Rush then
 		self.Damage = 15
 		self.Downed = false
 		self.SetupType = DMG_GENERIC
-		self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 		self:PlaySequenceAndMove("rush_atk_standup_f",1)
 		self.StandingUp = false
 		end
@@ -378,14 +378,14 @@ ENT.PossessionBinds = {
 		self.Damage = 25
 		self.Downed = false
 		self.SetupType = DMG_DIRECT
-		self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 		self:PlaySequenceAndMove("dragon_atk_standup_b",1)
 		self.StandingUp = false
 		elseif self.Rush then
 		self.Damage = 15
 		self.Downed = false
 		self.SetupType = DMG_GENERIC
-		self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 		self:PlaySequenceAndMove("rush_atk_standup_b",1)
 		self.StandingUp = false
 		end
@@ -459,7 +459,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -627,7 +627,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -895,7 +895,7 @@ ENT.PossessionBinds = {
 		ply:SetViewEntity(self.Cam)
 		ply:SetNoDraw(true)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1039,7 +1039,7 @@ ENT.PossessionBinds = {
 		ply:SetViewEntity(self.Cam)
 		ply:SetNoDraw(true)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1173,7 +1173,7 @@ ENT.PossessionBinds = {
 		ply:SetViewEntity(self.Cam)
 		ply:SetNoDraw(true)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1297,7 +1297,7 @@ ENT.PossessionBinds = {
 		ply:SetViewEntity(self.Cam)
 		ply:SetNoDraw(true)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1428,7 +1428,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 300)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1573,7 +1573,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 150)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1704,7 +1704,7 @@ ENT.PossessionBinds = {
 		ply:SetViewEntity(self.Cam)
 		ply:SetNoDraw(true)
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 300)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -1872,7 +1872,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(500,self.HeatC - 100)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -2007,7 +2007,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -2130,7 +2130,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -2268,7 +2268,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -2399,7 +2399,7 @@ ENT.PossessionBinds = {
 		ply:SetNoDraw(true)
 		self.Damage = 85
 		self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
-		self:EmitSound("yakuza0/ding.wav",511)
+		self:EmitSound("common/ding.wav",511)
 		self.HeatC = math.min(300,self.HeatC - 200)
 		ply:SetPos(self:GetPos())
 		ply:SetActiveWeapon( NULL )
@@ -2515,24 +2515,24 @@ ENT.PossessionBinds = {
 	self.NoDown = true
 	self.Stun = true
 	self.SetupType = DMG_FALL
-	self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_sway_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Stun = false
 	self.NoDown = false
 	elseif (self:GetSequenceName(self:GetSequence()) == "dragon_sway_f") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_PREVENT_PHYSICS_FORCE
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_sway_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "dragon_sway_l") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_sway_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "dragon_sway_r") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_sway_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "dragon_guard_hit") then
 	self.Damage = 10
@@ -2540,7 +2540,7 @@ ENT.PossessionBinds = {
 	self.Dodge = true
 	self.Guarding = false
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("yakuzakiwami/kiryu/attack_l"..math.random(3)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("dragon_guard_reverse",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Dodge = false
 	self.Fin4 = false
@@ -2548,20 +2548,20 @@ ENT.PossessionBinds = {
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self.Flinching = true
-	self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("brawler_atk_sway_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Flinching = false
 	elseif lockedOn.Downed then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self.Trample = true
-	self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("dragon_atk_down",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Trample = false
 	else
 	self.Damage = 35
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_l2.wav",85)
+	self:EmitSound("kiryu/attack_l3.wav",85)
 	self:PlaySequenceAndMove("dragon_atk_heavy",1)
 	end
 	self.Attacking = false
@@ -2570,29 +2570,29 @@ ENT.PossessionBinds = {
 	if (self:GetSequenceName(self:GetSequence()) == "rush_sway_b") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_FALL
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("rush_atk_sway_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "rush_sway_f") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.NoDown = true
 	self.SetupType = DMG_PREVENT_PHYSICS_FORCE
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("rush_atk_sway_f",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.NoDown = false
 	elseif (self:GetSequenceName(self:GetSequence()) == "rush_sway_l") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("rush_atk_sway_l",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "rush_sway_r") and self:GetCycle() < 0.25 then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("rush_atk_sway_r",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif lockedOn.Downed then
 	self.Damage = 20
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self:PlaySequenceAndMove("rush_atk_down",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif (self:GetSequenceName(self:GetSequence()) == "rush_guard_hit") then
 	self.Damage = 70
@@ -2605,13 +2605,13 @@ ENT.PossessionBinds = {
 	elseif self:GetPossessor():KeyDown(IN_BACK) then
 	self.Damage = 40
 	self.SetupType = DMG_GENERIC
-	self:EmitSound("Kiryu/attack_l3.wav",85)
+	self:EmitSound("kiryu/attack_l3.wav",85)
 	self:PlaySequenceAndMove("rush_atk_punch_b",1)
 	else
 	self.Damage = 25
 	self.NoDown = true
 	self.SetupType = DMG_ALWAYSGIB
-	self:EmitSound("Kiryu/attack_l1.wav",85)
+	self:EmitSound("kiryu/attack_l1.wav",85)
 	self:PlaySequenceAndMove("rush_atk_heavy",1)
 	self.NoDown = false
 	end
@@ -2648,7 +2648,7 @@ ENT.PossessionBinds = {
 	self.Fin2 = true
 	self.Gowan = false
 	self.HeatC = math.min(300,self.HeatC - 100)
-	self:EmitSound("Kiryu/attack_xl"..math.random(2)..".wav",85)
+	self:EmitSound("kiryu/attack_xl"..math.random(2)..".wav",85)
 	self:PlaySequenceAndMove("beast_atk_guard_tame",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Fin2 = false
 	elseif (self:GetSequenceName(self:GetSequence()) == "beast_guard_lp") or (self:GetSequenceName(self:GetSequence()) == "beast_guard_st") then
@@ -2685,7 +2685,7 @@ ENT.PossessionBinds = {
 	self.Damage = 40
 	self.SetupType = DMG_GENERIC
 	self.Trample = true
-	self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	self:PlaySequenceAndMove("beast_atk_down",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Trample = false
 	else
@@ -2715,7 +2715,7 @@ ENT.PossessionBinds = {
 	elseif self.Rush then
 	self.Damage = 40
 	self.SetupType = DMG_ALWAYSGIB
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self:PlaySequenceAndMove("rush_atk_run_heavy",1)
 	self.Attacking = false
 	self.Cmb01 = true
@@ -2737,17 +2737,17 @@ ENT.PossessionBinds = {
 	self.Fin1 = true
 	self.Attacking = true
 	if self.Beast and (self:GetSequenceName(self:GetSequence()) == "beast_cmb01") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 55
 	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("beast_cmb01_fin",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb01") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("rush_cmb01_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb01") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 45
 	self.Bound = true
 	self.SetupType = DMG_PREVENT_PHYSICS_FORCE
@@ -2765,7 +2765,7 @@ ENT.PossessionBinds = {
 	self.Fin2 = true
 	self.Attacking = true
 	if self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb01_fin") then
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 55
 	self.Bound = false
 	self.SetupType = DMG_SONIC
@@ -2781,19 +2781,19 @@ ENT.PossessionBinds = {
 	self.Fin2 = true
 	self.Attacking = true
 	if self.Beast and (self:GetSequenceName(self:GetSequence()) == "beast_cmb02") then
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 70
 	self.SetupType = DMG_NEVERGIB
 	self.Bound = true
 	self:PlaySequenceAndMove("beast_cmb02_fin",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Bound = false
 	elseif self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb02") then
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("rush_cmb02_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb02") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 50
 	self.NoDown = true
 	self.Kuzushi = true
@@ -2812,7 +2812,7 @@ ENT.PossessionBinds = {
 	self.Attacking = true
 	if self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb02_fin") then
 	self.Fin4 = true
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 60
 	self.SetupType = DMG_DIRECT
 	self.Kuzushi = false
@@ -2832,19 +2832,19 @@ ENT.PossessionBinds = {
 	self.Fin3 = true
 	self.Attacking = true
 	if self.Beast and (self:GetSequenceName(self:GetSequence()) == "beast_cmb03") then
-	self:EmitSound("Kiryu/beast_style2.wav",85)
+	self:EmitSound("kiryu/beast_style2.wav",85)
 	self.Damage = 85
 	self.SetupType = DMG_VEHICLE
 	self.Overrunning = true
 	self:PlaySequenceAndMove("beast_cmb03_fin",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	self.Overrunning = false
 	elseif self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb03") then
-	self:EmitSound("Kiryu/attack_xl3.wav",85)
+	self:EmitSound("kiryu/attack_xl3.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("rush_cmb03_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb03") then
-	self:EmitSound("Kiryu/attack_xl3.wav",85)
+	self:EmitSound("kiryu/attack_xl3.wav",85)
 	self.Damage = 55
 	self.SetupType = DMG_ALWAYSGIB
 	self:PlaySequenceAndMove("dragon_cmb03_fin",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2860,7 +2860,7 @@ ENT.PossessionBinds = {
 	self.Attacking = true
 	if self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb03_fin") then
 	self.Fin4 = true
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 65
 	self.SetupType = DMG_NEVERGIB
 	self:PlaySequenceAndMove("dragon_cmb03_finw",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2875,12 +2875,12 @@ ENT.PossessionBinds = {
 	self.Fin4 = true
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb04") then
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_FALL
 	self:PlaySequenceAndMove("rush_cmb04_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb04") then
-	self:EmitSound("Kiryu/attack_xl3.wav",85)
+	self:EmitSound("kiryu/attack_xl3.wav",85)
 	self.Damage = 60
 	self.SetupType = DMG_VEHICLE
 	self:PlaySequenceAndMove("dragon_cmb04_fin",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2895,7 +2895,7 @@ ENT.PossessionBinds = {
 	self.Attacking = true
 	if self.Dragon and (self:GetSequenceName(self:GetSequence()) == "dragon_cmb04_fin") then
 	self.Fin3 = true
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 70
 	self.Bound = true
 	self.SetupType = DMG_VEHICLE
@@ -2912,7 +2912,7 @@ ENT.PossessionBinds = {
 	self.Fin5 = true
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb05") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 25
 	self:PlaySequenceAndMove("rush_cmb05_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	end
@@ -2925,7 +2925,7 @@ ENT.PossessionBinds = {
 	self.Fin6 = true
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb06") then
-	self:EmitSound("Kiryu/attack_xl3.wav",85)
+	self:EmitSound("kiryu/attack_xl3.wav",85)
 	self.Damage = 25
 	self.SetupType = DMG_NEVERGIB
 	self:PlaySequenceAndMove("rush_cmb06_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2940,7 +2940,7 @@ ENT.PossessionBinds = {
 	self.Fin7 = true
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb07") then
-	self:EmitSound("Kiryu/attack_xl1.wav",85)
+	self:EmitSound("kiryu/attack_xl1.wav",85)
 	self.Damage = 35
 	self.SetupType = DMG_NEVERGIB
 	self:PlaySequenceAndMove("rush_cmb07_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2955,7 +2955,7 @@ ENT.PossessionBinds = {
 	self.Fin8 = true
 	self.Attacking = true
 	if self.Rush and (self:GetSequenceName(self:GetSequence()) == "rush_cmb08") then
-	self:EmitSound("Kiryu/attack_xl2.wav",85)
+	self:EmitSound("kiryu/attack_xl2.wav",85)
 	self.Damage = 75
 	self.SetupType = DMG_NEVERGIB
 	self:PlaySequenceAndMove("rush_cmb08_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
@@ -2989,69 +2989,69 @@ ENT.PossessionBinds = {
 				end
 			if not self.KickSafety then
 			if self.Emote == 1 then
-			self:EmitSound("yakuza0/kiryu/talk/laugh.wav",85)
+			self:EmitSound("kiryu/talk/laugh.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_ok",1)
 			elseif self.Emote == 2 then
-			self:EmitSound("yakuza0/kiryu/talk/nod"..math.random(6)..".wav",85)
+			self:EmitSound("kiryu/talk/nod"..math.random(6)..".wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_yes",1)
 			elseif self.Emote == 3 then
-			self:EmitSound("yakuza0/kiryu/talk/negate"..math.random(4)..".wav",85)
+			self:EmitSound("kiryu/talk/negate"..math.random(4)..".wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_no",1)
 			elseif self.Emote == 4 then
-			self:EmitSound("yakuza0/kiryu/talk/angry.wav",85)
+			self:EmitSound("kiryu/talk/angry.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_angry",1)
 			elseif self.Emote == 5 then
-			self:EmitSound("yakuza0/kiryu/talk/dissapointed.wav",85)
+			self:EmitSound("kiryu/talk/dissapointed.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_ase",1)
 			elseif self.Emote == 6 then
-			self:EmitSound("yakuza0/kiryu/talk/cry.wav",85)
+			self:EmitSound("kiryu/talk/cry.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_sad",1)
 			elseif self.Emote == 7 then
-			self:EmitSound("yakuza0/kiryu/talk/laugh.wav",85)
+			self:EmitSound("kiryu/talk/laugh.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_smile",1)
 			elseif self.Emote == 8 then
-			self:EmitSound("yakuza0/kiryu/talk/question.wav",85)
+			self:EmitSound("kiryu/talk/question.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_quest",1)
 			elseif self.Emote == 9 then
-			self:EmitSound("yakuza0/kiryu/talk/notice.wav",85)
+			self:EmitSound("kiryu/talk/notice.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_info_f",1)
 			elseif self.Emote == 10 then
-			self:EmitSound("yakuza0/kiryu/talk/notice.wav",85)
+			self:EmitSound("kiryu/talk/notice.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_info_l",1)
 			elseif self.Emote == 11 then
-			self:EmitSound("yakuza0/kiryu/talk/notice.wav",85)
+			self:EmitSound("kiryu/talk/notice.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_info_r",1)
 			elseif self.Emote == 12 then
-			self:EmitSound("yakuza0/kiryu/talk/nod"..math.random(6)..".wav",85)
+			self:EmitSound("kiryu/talk/nod"..math.random(6)..".wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_kansin",1)
 			elseif self.Emote == 13 then
-			self:EmitSound("yakuza0/kiryu/talk/wonder.wav",85)
+			self:EmitSound("kiryu/talk/wonder.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_surp",1)
 			elseif self.Emote == 14 then
-			self:EmitSound("yakuza0/kiryu/talk/hang_up.wav",85)
+			self:EmitSound("kiryu/talk/hang_up.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_think",1)
 			elseif self.Emote == 15 then
 			self:PlaySequenceAndMove("tlk_kru_stand_sorry",1)
 			elseif self.Emote == 16 then
-			self:EmitSound("yakuza0/kiryu/talk/angry.wav",85)
+			self:EmitSound("kiryu/talk/angry.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_away",1)
 			elseif self.Emote == 17 then
-			self:EmitSound("yakuza0/kiryu/talk/call"..math.random(2)..".wav",85)
+			self:EmitSound("kiryu/talk/call"..math.random(2)..".wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_call",1)
 			elseif self.Emote == 18 then
-			self:EmitSound("yakuza0/kiryu/talk/dissapointed.wav",85)
+			self:EmitSound("kiryu/talk/dissapointed.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_gakkari",1)
 			elseif self.Emote == 19 then
-			self:EmitSound("yakuza0/kiryu/talk/nod"..math.random(6)..".wav",85)
+			self:EmitSound("kiryu/talk/nod"..math.random(6)..".wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_ojigi",1)
 			elseif self.Emote == 20 then
-			self:EmitSound("yakuza0/kiryu/talk/nod6.wav",85)
+			self:EmitSound("kiryu/talk/nod6.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_request",1)
 			elseif self.Emote == 21 then
-			self:EmitSound("yakuza0/kiryu/talk/laugh.wav",85)
+			self:EmitSound("kiryu/talk/laugh.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_eri_naoshi",1)
 			elseif self.Emote == 22 then
-			self:EmitSound("yakuza0/kiryu/talk/laugh.wav",85)
+			self:EmitSound("kiryu/talk/laugh.wav",85)
 			self:PlaySequenceAndMove("tlk_kru_stand_happy",1)
 			end
 			end
@@ -3349,7 +3349,7 @@ ENT.PossessionBinds = {
 	self.Target = lockedOn
 	local ent = lockedOn
 		self:CICO(function(self)
-		self:EmitSound("Kiryu/attack_s3.wav",85)
+		self:EmitSound("kiryu/attack_s3.wav",85)
 		self:SetVelocity(Vector(0,0,0))
 		local col = self:GetCollisionGroup()
 		self:SetCollisionGroup(COLLISION_GROUP_IN_VEHICLE)
@@ -3403,7 +3403,7 @@ ENT.PossessionBinds = {
 	if self.Rush and not self.KickSafety then
 	self.Damage = 15
 	self.SetupType = DMG_SONIC
-	self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	self.GuardBreak = true
 	self.NoDown = true
 	self:PlaySequenceAndMove("rush_atk_sp",1)
@@ -3432,7 +3432,7 @@ ENT.PossessionBinds = {
 		self.HeatM:StopParticles()
 		ParticleEffectAttach("dragon_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
 		end
-		self:EmitSound("Kiryu/rush_style"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/rush_style"..math.random(2)..".wav",85)
 		self.IdleAnimation = "rush_shift_idle"
 		self.WalkAnimation = "rush_shift"
 		self.RunAnimation = "rush_run"
@@ -3464,7 +3464,7 @@ ENT.PossessionBinds = {
 		if !self.ThemeSongLoop6 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop6 = CreateSound(game.GetWorld(),"Kiryu/songs/touristtrap_c.wav", filter)
+			self.ThemeSongLoop6 = CreateSound(game.GetWorld(),"kiryu/songs/touristtrap_c.wav", filter)
 			self.ThemeSongLoop6:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop6:Play()
@@ -3484,17 +3484,7 @@ ENT.PossessionBinds = {
 		self.Dragon = true
 		self.Rush = false
 		self.Beast = false
-		if IsValid(self.HeatM) then
-		self.HeatM:StopParticles()
-		ParticleEffectAttach("brawler_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
-		end
-		end
-		if self.Combat and not self.Dragon then
-		if IsValid(self.HeatM) then
-		self.HeatM:StopParticles()
-		ParticleEffectAttach("brawler_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
-		end
-		self:EmitSound("Kiryu/dragon_style"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/dragon_style"..math.random(4)..".wav",85)
 		self.IdleAnimation = "dragon_shift_idle"
 		self.WalkAnimation = "dragon_shift"
 		self.RunAnimation = "kiryu_run"
@@ -3595,14 +3585,14 @@ ENT.PossessionBinds = {
 		if !self.ThemeSongLoop2 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop2 = CreateSound(game.GetWorld(),"Kiryu/songs/touristtrap.wav", filter)
+			self.ThemeSongLoop2 = CreateSound(game.GetWorld(),"kiryu/songs/touristtrap.wav", filter)
 			self.ThemeSongLoop2:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop2:Play()
 		end
 		self.Taunting = true
 		self:PlaySequenceAndMove("dragon_btlst",1)
-		self:EmitSound("Kiryu/rush_style"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/rush_style"..math.random(2)..".wav",85)
 		if IsValid(self.HeatM) then
 		self.HeatM:StopParticles()
 		self:EmitSound("yakuza0/gage_heat.wav",511)
@@ -3618,14 +3608,14 @@ ENT.PossessionBinds = {
 		if !self.ThemeSongLoop3 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop3 = CreateSound(game.GetWorld(),"Kiryu/songs/yokohamatussle.wav", filter)
+			self.ThemeSongLoop3 = CreateSound(game.GetWorld(),"kiryu/songs/yokohamatussle.wav", filter)
 			self.ThemeSongLoop3:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop3:Play()
 		end
 		self.Taunting = true
 		self:PlaySequenceAndMove("dragonbtlst",1)
-		self:EmitSound("Kiryu/beast_style"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/beast_style"..math.random(2)..".wav",85)
 		if IsValid(self.HeatM) then
 		self.HeatM:StopParticles()
 		self:EmitSound("yakuza0/gage_heat.wav",511)
@@ -3648,12 +3638,7 @@ ENT.PossessionBinds = {
 		end
 		self.Taunting = true
 		self:PlaySequenceAndMove("dragon_btlst",1)
-		self:EmitSound("Kiryu/dragon_style"..math.random(2)..".wav",85)
-		if IsValid(self.HeatM) then
-		self.HeatM:StopParticles()
-		self:EmitSound("yakuza0/gage_heat.wav",511)
-		ParticleEffectAttach("brawler_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
-		end
+		self:EmitSound("kiryu/dragon_style"..math.random(4)..".wav",85)
 		self.Taunting = false
 		self.IdleAnimation = "dragon_shift_idle"
 		self.WalkAnimation = "dragon_shift"
@@ -3662,13 +3647,13 @@ ENT.PossessionBinds = {
 		else
 		self.Taunting = true
 		if self.Beast then
-		self:EmitSound("Kiryu/beast_taunt.wav",100)
+		self:EmitSound("kiryu/beast_taunt.wav",100)
 		self:PlaySequenceAndMove("beast_taunt",1)
 		elseif self.Rush then
-		self:EmitSound("Kiryu/rush_taunt.wav",100)
+		self:EmitSound("kiryu/rush_taunt.wav",100)
 		self:PlaySequenceAndMove("rush_taunt",1)
 		elseif self.Dragon then
-		self:EmitSound("yakuza0/kiryu/provo"..math.random(2)..".wav",100)
+		self:EmitSound("kiryu/provo"..math.random(2)..".wav",100)
 		self:PlaySequenceAndMove("dragon_taunt",1)
 		end
 		self.Taunting = false
@@ -4169,7 +4154,7 @@ ENT.PossessionBinds = {
 	elseif self.Beast then
 	self.GuardHP = 100
 	self.Gowan = true
-	self:EmitSound("Kiryu/attack_s_guard.wav",85)
+	self:EmitSound("kiryu/attack_s_guard.wav",85)
 	self:SetCooldown("Invincible",self:GetCooldown("Invincible")+0.5)
 	self:PlaySequenceAndMove("beast_guard_st")
 	while self:GetPossessor():KeyDown(IN_DUCK) and self.Gowan do
@@ -4206,7 +4191,7 @@ ENT.PossessionBinds = {
 		self.HeatM:StopParticles()
 		ParticleEffectAttach("beast_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
 		end
-		self:EmitSound("Kiryu/beast_style"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/beast_style"..math.random(2)..".wav",85)
 		self.IdleAnimation = "beast_shift_idle"
 		self.WalkAnimation = "beast_shift"
 		self.RunAnimation = "beast_walk"
@@ -4239,7 +4224,7 @@ ENT.PossessionBinds = {
 		if !self.ThemeSongLoop7 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop7 = CreateSound(game.GetWorld(),"Kiryu/songs/yokohamatussle_c.wav", filter)
+			self.ThemeSongLoop7 = CreateSound(game.GetWorld(),"kiryu/songs/yokohamatussle_c.wav", filter)
 			self.ThemeSongLoop7:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop7:Play()
@@ -4333,7 +4318,7 @@ end
 function ENT:OnLandOnGround()
 	if self:IsDead() or self:IsDown() or self.Downed then return end
 	self:CICO(function(self, delay)
-		self:EmitSound("yakuza0/down2.wav")
+		self:EmitSound("common/body2.wav")
 		self:PlaySequenceAndMove("land",1)
 	end)
 end
@@ -4581,7 +4566,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 55
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("beast_cmb01_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4591,7 +4576,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 35
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("beast_cmb02",1)
 		end
 		end)
@@ -4605,7 +4590,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 55
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("beast_cmb02_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4615,7 +4600,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 40
-		self:EmitSound("Kiryu/attack_s3.wav",85)
+		self:EmitSound("kiryu/attack_s4.wav",85)
 		self:PlaySequenceAndMove("beast_cmb03",1)
 		end
 		end)
@@ -4629,7 +4614,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 45
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("beast_cmb03_heavy",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4640,7 +4625,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self.Damage = 55
 		self.Charge = true
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("beast_cmb03_fin",1)
 		self.Charge = false
 		end
@@ -4655,11 +4640,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 45
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb01_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		else
 		self.Damage = 30
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb02",self.DragonSpeed)
 		end
 		end)
@@ -4671,7 +4656,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 55
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb01_finw",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4690,11 +4675,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb02_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		else
 		self.Damage = 30
-		self:EmitSound("Kiryu/attack_s3.wav",85)
+		self:EmitSound("kiryu/attack_s3.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb03",self.DragonSpeed)
 		end
 		end)
@@ -4706,7 +4691,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 60
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb02_finw",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4725,11 +4710,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 55
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb03_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		else
 		self.Damage = 30
-		self:EmitSound("Kiryu/attack_l2.wav",85)
+		self:EmitSound("kiryu/attack_l2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb04",self.DragonSpeed)
 		end
 		end)
@@ -4741,7 +4726,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 65
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb03_finw",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4758,7 +4743,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 60
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb04_fin",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		end)
 		end
@@ -4769,7 +4754,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 70
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("dragon_cmb04_finw",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4786,7 +4771,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 60
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("EX_cmb01",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		end)
 		end
@@ -4797,7 +4782,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 60
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("EX_cmb02",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		end)
 		end
@@ -4808,7 +4793,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 60
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("EX_cmb03",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		end)
 		end
@@ -4821,11 +4806,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 55
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("EX_cmb05",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		else
 		self.Damage = 30
-		self:EmitSound("Kiryu/attack_l2.wav",85)
+		self:EmitSound("kiryu/attack_l2.wav",85)
 		self:PlaySequenceAndMove("EX_cmb04",self.DragonSpeed)
 		end
 		end)
@@ -4839,7 +4824,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("rush_cmb01_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4849,7 +4834,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb02",self.RushSpeed)
 		end
 		end)
@@ -4863,7 +4848,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb02_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4873,7 +4858,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s3.wav",85)
+		self:EmitSound("kiryu/attack_s3.wav",85)
 		self:PlaySequenceAndMove("rush_cmb03",self.RushSpeed)
 		end
 		end)
@@ -4887,7 +4872,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("rush_cmb03_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4897,7 +4882,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s1.wav",85)
+		self:EmitSound("kiryu/attack_s1.wav",85)
 		self:PlaySequenceAndMove("rush_cmb04",self.RushSpeed)
 		end
 		end)
@@ -4911,7 +4896,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb04_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4921,7 +4906,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb05",self.RushSpeed)
 		end
 		end)
@@ -4935,7 +4920,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("rush_cmb05_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4945,7 +4930,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s3.wav",85)
+		self:EmitSound("kiryu/attack_s3.wav",85)
 		self:PlaySequenceAndMove("rush_cmb06",self.RushSpeed)
 		end
 		end)
@@ -4959,7 +4944,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl1.wav",85)
+		self:EmitSound("kiryu/attack_xl1.wav",85)
 		self:PlaySequenceAndMove("rush_cmb06_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4969,7 +4954,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s1.wav",85)
+		self:EmitSound("kiryu/attack_s1.wav",85)
 		self:PlaySequenceAndMove("rush_cmb07",self.RushSpeed)
 		end
 		end)
@@ -4983,7 +4968,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		local cmb = math.random(1,3)
 		if cmb==2 then
 		self.Damage = 50
-		self:EmitSound("Kiryu/attack_xl2.wav",85)
+		self:EmitSound("kiryu/attack_xl2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb07_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -4993,7 +4978,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		else
 		self.Damage = 15
-		self:EmitSound("Kiryu/attack_s2.wav",85)
+		self:EmitSound("kiryu/attack_s2.wav",85)
 		self:PlaySequenceAndMove("rush_cmb08",self.RushSpeed)
 		end
 		end)
@@ -5005,7 +4990,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		else
 		self:CICO(function()
 		self.Damage = 45
-		self:EmitSound("Kiryu/attack_xl3.wav",85)
+		self:EmitSound("kiryu/attack_xl3.wav",85)
 		self:PlaySequenceAndMove("rush_cmb08_fin",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Heat then
 		self:SetCooldown("KiryuAttack",math.random(0.5,1))
@@ -5024,7 +5009,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		end
 	end
 	if e == "brawlertaunt" then
-		self:EmitSound("yakuza0/kiryu/provo"..math.random(2)..".wav")
+		self:EmitSound("kiryu/provo"..math.random(2)..".wav")
 		self.HeatC = math.min(300,self.HeatC + 40)
 		for k,v in pairs(ents.FindByClass("drg_scot_*")) do
 			if v:IsAlive() and v.CanAngry and self:IsInRange(v,self.RangeAttackRange) then
@@ -5090,7 +5075,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 	end
 	if e == "chyro" then
 		if IsValid(self.Target) then
-		self:EmitSound("yakuza0/bone3.wav",85)
+		self:EmitSound("common/bone3.wav",85)
 		self.HeatC = math.min(300,self.HeatC - 150)
 		self.Target:TakeDamage(250, self, self)
 		end
@@ -5115,7 +5100,7 @@ if e == "chyro" then
 		self:EmitSound("common/bone"..math.random(2)..".wav")
 	end
 	if e == "fist_bump" then
-		self:EmitSound("Kiryu/e_atk"..math.random(1,4)..".wav")
+		self:EmitSound("kiryu/e_atk"..math.random(1,4)..".wav")
 	end
 	if e == "boner" then
 		if IsValid(self.BoundTarget) then
@@ -5777,37 +5762,37 @@ if e == "chyro" then
 		end
 	end
 	if e == "nishiki_nagurikakari1" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/nagurikakari1.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/nagurikakari1.wav",85)
 	end
 	if e == "nishiki_kiryu_uke" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/kiryu_uke.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/kiryu_uke.wav",85)
 	end
 	if e == "nishiki_kizuki_nishiki" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/kizuki_nishiki.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/kizuki_nishiki.wav",85)
 	end
 	if e == "nishiki_nishiki_thanks" then
 		if IsValid(self.Nishiki) then
-		self.Nishiki:EmitSound("yakuza0/kiryu/actions/nishiki/nishiki_thanks.wav",85)
+		self.Nishiki:EmitSound("kiryu/actions/nishiki/nishiki_thanks.wav",85)
 		end
 	end
 	if e == "nishiki_nishiki_naguri" then
 		if IsValid(self.Nishiki) then
-		self.Nishiki:EmitSound("yakuza0/kiryu/actions/nishiki/nishiki_naguri.wav",85)
+		self.Nishiki:EmitSound("kiryu/actions/nishiki/nishiki_naguri.wav",85)
 		end
 	end
 	if e == "nishiki_nishiki_gangan" then
 		if IsValid(self.Nishiki) then
-		self.Nishiki:EmitSound("yakuza0/kiryu/actions/nishiki/nishiki_gangan.wav",85)
+		self.Nishiki:EmitSound("kiryu/actions/nishiki/nishiki_gangan.wav",85)
 		end
 	end
 	if e == "nishiki_kiryu_haraipunch" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/kiryu_haraipunch.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/kiryu_haraipunch.wav",85)
 	end
 	if e == "nishiki_last_punch" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/last_punch.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/last_punch.wav",85)
 	end
 	if e == "nishiki_down" then
-		self:EmitSound("yakuza0/kiryu/actions/nishiki/down.wav",85)
+		self:EmitSound("kiryu/actions/nishiki/down.wav",85)
 	end
 	if e == "nishiki_dam" then
 		if IsValid(self.Target) then
@@ -5908,16 +5893,16 @@ if e == "chyro" then
 		end
 	end
 	if e == "disarm_down" then
-		self:EmitSound("yakuza0/kiryu/actions/brawler_disarm/down.wav",85)
+		self:EmitSound("kiryu/actions/brawler_disarm/down.wav",85)
 	end
 	if e == "disarm_keri" then
-		self:EmitSound("yakuza0/kiryu/actions/brawler_disarm/keri"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/actions/brawler_disarm/keri"..math.random(2)..".wav",85)
 	end
 	if e == "disarm_punch" then
-		self:EmitSound("yakuza0/kiryu/actions/brawler_disarm/punch.wav",85)
+		self:EmitSound("kiryu/actions/brawler_disarm/punch.wav",85)
 	end
 	if e == "disarm_tukami" then
-		self:EmitSound("yakuza0/kiryu/actions/brawler_disarm/tukami.wav",85)
+		self:EmitSound("kiryu/actions/brawler_disarm/tukami.wav",85)
 	end
 	if e == "disarm_dam1" then
 		if IsValid(self.Target) then
@@ -6029,29 +6014,29 @@ if e == "chyro" then
 		end
 	end
 	if e == "selfdestruct_keri" then
-		self:EmitSound("yakuza0/kiryu/actions/selfdestruct/keri.wav",85)
+		self:EmitSound("kiryu/actions/selfdestruct/keri.wav",85)
 	end
 	if e == "selfdestruct_kerijump" then
-		self:EmitSound("yakuza0/kiryu/actions/selfdestruct/kerijump.wav",85)
+		self:EmitSound("kiryu/actions/selfdestruct/kerijump.wav",85)
 	end
 	if e == "selfdestruct_obj_hit" then
 		if IsValid(self.Target) then
-			self.Target:EmitSound("yakuza0/kiryu/actions/selfdestruct/obj_hit.wav",85)
+			self.Target:EmitSound("kiryu/actions/selfdestruct/obj_hit.wav",85)
 		end
 	end
 	if e == "selfdestruct_down" then
 		if IsValid(self.Target) then
-			self.Target:EmitSound("yakuza0/kiryu/actions/selfdestruct/down.wav",85)
+			self.Target:EmitSound("kiryu/actions/selfdestruct/down.wav",85)
 		end
 	end
 	if e == "attacks" then
-		self:EmitSound("Kiryu/attack_s"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_s"..math.random(4)..".wav",85)
 	end
 	if e == "attackl" then
-		self:EmitSound("Kiryu/attack_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/attack_l"..math.random(3)..".wav",85)
 	end
 	if e == "attackxl" then
-		self:EmitSound("Kiryu/attack_xl"..math.random(3)..".wav",85)
+		self:EmitSound("kiryu/attack_xl"..math.random(3)..".wav",85)
 	end
 	if e == "pain" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6060,7 +6045,7 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("yakuza0/kiryu/pain.wav",85)
+		self:EmitSound("kiryu/pain.wav",85)
 	end
 	if e == "painh" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6069,7 +6054,7 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("Kiryu/damage_head_s"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/damage_head_s"..math.random(4)..".wav",85)
 	end
 	if e == "painb" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6078,7 +6063,7 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("Kiryu/damage_body_s"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/damage_body_s"..math.random(4)..".wav",85)
 	end
 	if e == "painhl" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6087,7 +6072,7 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("Kiryu/damage_head_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/damage_head_l"..math.random(4)..".wav",85)
 	end
 	if e == "painbl" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6096,7 +6081,7 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("Kiryu/damage_body_l"..math.random(4)..".wav",85)
+		self:EmitSound("kiryu/damage_body_l"..math.random(4)..".wav",85)
 	end
 	if e == "painxl" then
 		if (self:GetBodygroup(1) == 1) then
@@ -6105,10 +6090,10 @@ if e == "chyro" then
 				self.CigHelp:Remove()
 			end
 		end
-		self:EmitSound("Kiryu/damage_xl"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/damage_xl"..math.random(2)..".wav",85)
 	end
 	if e == "stand" then
-		self:EmitSound("yakuza0/kiryu/stand"..math.random(2)..".wav",85)
+		self:EmitSound("kiryu/stand"..math.random(2)..".wav",85)
 	end
 	if e == "downstandupb1" then
 		self:CICO(function()
@@ -6739,19 +6724,19 @@ function ENT:Yakuza_Melee(enemy)
 			self:SetCooldown("KiryuAttack",math.random(2.5,4))
 	self.Attacking = true
 	if self.Beast then
-	self:EmitSound("Kiryu/attack_s1.wav",85)
+	self:EmitSound("kiryu/attack_s1.wav",85)
 	self.Damage = 25
 	self:PlaySequenceAndMove("beast_cmb01",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	end
 	if self.Rush then
 	local att = math.random(1,2)
 	if att==1 then
-	self:EmitSound("Kiryu/attack_s1.wav",85)
+	self:EmitSound("kiryu/attack_s1.wav",85)
 	self.Damage = 10
 	self:PlaySequenceAndMove("rush_cmb01",self.RushSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	elseif att==2 then
 	self.Damage = 35
-	self:EmitSound("Kiryu/attack_xl3.wav",85)
+	self:EmitSound("kiryu/attack_xl3.wav",85)
 	self:PlaySequenceAndMove("rush_atk_sp",1)
 	self.Attacking = false
 	end
@@ -6759,12 +6744,12 @@ function ENT:Yakuza_Melee(enemy)
 	local att = math.random(1,3)
 	if att==1 then
 	self.Damage = 30
-	self:EmitSound("Kiryu/attack_s1.wav",85)
+	self:EmitSound("kiryu/attack_s3.wav",85)
 	self:PlaySequenceAndMove("dragon_cmb01",self.DragonSpeed,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	elseif att==2 then
 	self.Damage = 35
-	self:EmitSound("Kiryu/attack_l2.wav",85)
-	self:PlaySequenceAndMove("dragonatk_heavy",self.Speed)
+	self:EmitSound("kiryu/attack_l3.wav",85)
+	self:PlaySequenceAndMove("dragon_atk_heavy",self.Speed)
 	self.Attacking = false
 	elseif att==3 then
 	self.Damage = 50
@@ -6802,7 +6787,7 @@ function ENT:Stance()
 		if !self.ThemeSongLoop2 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop2 = CreateSound(game.GetWorld(),"Kiryu/songs/touristtrap.wav", filter)
+			self.ThemeSongLoop2 = CreateSound(game.GetWorld(),"kiryu/songs/touristtrap.wav", filter)
 			self.ThemeSongLoop2:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop2:Play()
@@ -6820,7 +6805,7 @@ function ENT:Stance()
 		if !self.ThemeSongLoop3 then 
 			filter = RecipientFilter()
 			filter:AddAllPlayers()
-			self.ThemeSongLoop3 = CreateSound(game.GetWorld(),"Kiryu/songs/yokohamatussle.wav", filter)
+			self.ThemeSongLoop3 = CreateSound(game.GetWorld(),"kiryu/songs/yokohamatussle.wav", filter)
 			self.ThemeSongLoop3:SetSoundLevel(0)
 		end
 		self.ThemeSongLoop3:Play()
@@ -6843,11 +6828,7 @@ function ENT:Stance()
 		end
 		self.ThemeSongLoop4:Play()
 		end
-		if IsValid(self.HeatM) then
-		self.HeatM:StopParticles()
 		self:EmitSound("yakuza0/gage_heat.wav",511)
-		ParticleEffectAttach("brawler_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
-		end
 	self.IdleAnimation = "dragon_shift_idle"
 	self.WalkAnimation = "dragon_shift"
 	self.RunAnimation = "kiryu_run"
@@ -6891,7 +6872,7 @@ end
 	self.HeatM:StopParticles()
 	ParticleEffectAttach("dragon_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
 	end
-	self:EmitSound("yakuza0/kiryu/kenka_st.wav",85)
+	self:EmitSound("kiryu/kenka_st.wav",85)
 		self:EmitSound("yakuza0/style.wav",511)
 	self:PlaySequenceAndMove("into_rush",1)
 	self.IdleAnimation = "rush_shift_idle"
@@ -6907,7 +6888,7 @@ end
 	self.HeatM:StopParticles()
 	ParticleEffectAttach("beast_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
 	end
-	self:EmitSound("Kiryu/attack_s_st.wav",85)
+	self:EmitSound("kiryu/attack_s_st.wav",85)
 		self:EmitSound("yakuza0/style.wav",511)
 	self:PlaySequenceAndMove("into_beast",1)
 	self.IdleAnimation = "beast_shift_idle"
@@ -6919,12 +6900,8 @@ end
 	end
 	elseif style==3 then
 	if self.Combat and not self.Dragon then
-	if IsValid(self.HeatM) then
-	self.HeatM:StopParticles()
-	ParticleEffectAttach("brawler_heat",PATTACH_POINT_FOLLOW,self.HeatM,0)
-	end
-	self:EmitSound("yakuza0/kiryu/sake.wav",85)
-		self:EmitSound("yakuza0/style.wav",511)
+	self:EmitSound("kiryu/sake.wav",85)
+	self:EmitSound("yakuza0/style.wav",511)
 	self:PlaySequenceAndMove("dragonstyle",1)
 	self.IdleAnimation = "dragon_shift_idle"
 	self.WalkAnimation = "dragon_shift"
@@ -7064,7 +7041,7 @@ function ENT:OnDealtDamage(ent, dmg)
 		local col = self:GetCollisionGroup()
 		self.Damage = 75
 		self:SetCollisionGroup(COLLISION_GROUP_IN_VEHICLE)
-		self:EmitSound("yakuza0/kiryu/throw.wav",85)
+		self:EmitSound("kiryu/throw.wav",85)
 		self:PlaySequenceAndMove("beast_guard_counter_f_sync")
 		self.HeatAction = false
 		self.Downed = false
@@ -7102,7 +7079,7 @@ function ENT:OnDealtDamage(ent, dmg)
 		local col = self:GetCollisionGroup()
 		self.Damage = 75
 		self:SetCollisionGroup(COLLISION_GROUP_IN_VEHICLE)
-		self:EmitSound("yakuza0/kiryu/throw.wav",85)
+		self:EmitSound("kiryu/throw.wav",85)
 		self:PlaySequenceAndMove("beast_kaihi_nage_f_sync")
 		self.HeatAction = false
 		self.Downed = false
@@ -7123,7 +7100,7 @@ function ENT:OnDealtDamage(ent, dmg)
 		local col = self:GetCollisionGroup()
 		self.Damage = 75
 		self:SetCollisionGroup(COLLISION_GROUP_IN_VEHICLE)
-		self:EmitSound("yakuza0/kiryu/throw.wav",85)
+		self:EmitSound("kiryu/throw.wav",85)
 		self:PlaySequenceAndMove("beast_kaihi_nage_b_sync")
 		self.HeatAction = false
 		self.Downed = false
@@ -8684,7 +8661,7 @@ function ENT:OnDeath(dmg)
 	if IsValid(self.HeatM) then
 	self.HeatM:Remove()
 	end
-	self:EmitSound("Kiryu/dead"..math.random(4)..".wav",85)
+	self:EmitSound("kiryu/dead"..math.random(4)..".wav",85)
 	if dmg:GetAttacker().HeatAction then
 	local cyc = self:GetCycle()
 	self:Timer(0.02,function()
@@ -8885,13 +8862,13 @@ function ENT:CustomThink()
 			if not self.Dashing then
 				self.Dashing = true
 				self:GetPossessor():SetFOV(90,0.5,self)
-				self:EmitSound("yakuza0/kiryu/dash_nrm.wav",85)
+				self:EmitSound("kiryu/dash_nrm.wav",85)
 			end
 			if self.Stamina < 26 then
 				if self:GetPossessor():GetFOV() == 90 then
 				self:GetPossessor():SetFOV(85,0.5,self)
-				self:StopSound("yakuza0/kiryu/dash_nrm.wav")
-				self:EmitSound("yakuza0/kiryu/dash_tired.wav",85)
+				self:StopSound("kiryu/dash_nrm.wav")
+				self:EmitSound("kiryu/dash_tired.wav",85)
 				end
 				self.RunAnimation = "run_dash_tired"
 			else
@@ -8899,8 +8876,8 @@ function ENT:CustomThink()
 			end
 		else
 			if self.Dashing then
-				self:StopSound("yakuza0/kiryu/dash_nrm.wav")
-				self:StopSound("yakuza0/kiryu/dash_tired.wav")
+				self:StopSound("kiryu/dash_nrm.wav")
+				self:StopSound("kiryu/dash_tired.wav")
 				self.Dashing = false
 				self:GetPossessor():SetFOV(0,0.5,self)
 			end
@@ -8917,8 +8894,8 @@ function ENT:CustomThink()
 	if self:IsRunning() and self.Dashing then
 		self.Stamina = math.min(100,self.Stamina - 0.25)
 	else
-		self:StopSound("yakuza0/kiryu/dash_nrm.wav")
-		self:StopSound("yakuza0/kiryu/dash_tired.wav")
+		self:StopSound("kiryu/dash_nrm.wav")
+		self:StopSound("kiryu/dash_tired.wav")
 		self.Stamina = math.min(100,self.Stamina + 0.25)
 	end
 	if self.Stamina < 0 and self.Dashing and self:IsRunning() and not self.RSafety and (self:GetSequenceName(self:GetSequence()) == "run_dash_tired") then
@@ -8926,9 +8903,9 @@ function ENT:CustomThink()
 		self.RSafety = true
 		self:CICO(function(self)
 			self.RSafety = false
-			self:StopSound("yakuza0/kiryu/dash_nrm.wav")
-			self:StopSound("yakuza0/kiryu/dash_tired.wav")
-			self:EmitSound("yakuza0/kiryu/dash_end"..math.random(2)..".wav",85)
+			self:StopSound("kiryu/dash_nrm.wav")
+			self:StopSound("kiryu/dash_tired.wav")
+			self:EmitSound("kiryu/dash_end"..math.random(2)..".wav",85)
 			self:PlaySequenceAndMove("run_dash_tired_stop_l",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 			self.Stamina = 100
 		end)
@@ -8969,12 +8946,12 @@ function ENT:CustomThink()
 			if IsValid(self:PossessionGetLockedOn()) then
 			self.Damage = 25
 			self.SetupType = DMG_GENERIC
-			self:EmitSound("Kiryu/attack_s1.wav",85)
+			self:EmitSound("kiryu/attack_s1.wav",85)
 			self:PlaySequenceAndMove("brawler_atk_heavy",1)
 			else
 			self.Damage = 35
 			self.SetupType = DMG_GENERIC
-			self:EmitSound("Kiryu/attack_l1.wav",85)
+			self:EmitSound("kiryu/attack_l1.wav",85)
 			self:PlaySequenceAndMove("brawler_atk_kick",1)
 			self.Cmb02 = false
 			end
@@ -8985,7 +8962,7 @@ function ENT:CustomThink()
 		self:CICO(function(self)
 			self.Fin4 = true
 			self.Damage = 50
-			self:EmitSound("yakuza0/kiryu/special04.wav",85)
+			self:EmitSound("kiryu/special04.wav",85)
 			self.SetupType = DMG_FALL
 			self:PlaySequenceAndMove("brawler_atk_tame_en",1,function(self,cycle)if cycle < 0.2 then self:PossessionFaceForward() end end)
 			self.Fin4 = false
@@ -8997,7 +8974,7 @@ function ENT:CustomThink()
 			self:StopSound("yakuza0/tame.wav",85)
 			self.Damage = 40
 			self.SetupType = DMG_GENERIC
-			self:EmitSound("Kiryu/attack_xl2.wav",85)
+			self:EmitSound("kiryu/attack_xl2.wav",85)
 			self:PlaySequenceAndMove("beast_atk_tackle",1)
 			self.CantLoop = false
 		end)
@@ -9006,7 +8983,7 @@ function ENT:CustomThink()
 		self:CICO(function(self)
 			self.Fin3 = true
 			self.Damage = 75
-			self:EmitSound("yakuza0/kiryu/throw.wav",85)
+			self:EmitSound("kiryu/throw.wav",85)
 			self.SetupType = DMG_VEHICLE
 			self:PlaySequenceAndMove("beast_atk_tame_tackle_en",1,function(self,cycle)if cycle < 0.2 then self:PossessionFaceForward() end end)
 			self.Fin3 = false

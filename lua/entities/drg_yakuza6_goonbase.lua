@@ -9990,7 +9990,7 @@ function ENT:OnTakeDamage(dmg)
 			end
 			self.Flinches = math.min(12,self.Flinches + 1)
 			if dmer.Kuzushi then
-			self:PlaySequenceAndMove("flinch_kuzushi_b_leg_l",1)
+			self:PlaySequenceAndMove("flinch_leg_lvl1_f",1)
 			else
 			self:PlaySequenceAndMove("flinch_leg_lvl1_f",1)
 			end
@@ -10018,7 +10018,7 @@ function ENT:OnTakeDamage(dmg)
 			end
 			self.Flinches = math.min(12,self.Flinches + 1)
 			if dmer.Kuzushi then
-			self:PlaySequenceAndMove("flinch_kuzushi_b_leg_r",1)
+			self:PlaySequenceAndMove("flinch_leg_lvl1_b",1)
 			else
 			self:PlaySequenceAndMove("flinch_leg_lvl1_b",1)
 			end
@@ -10046,7 +10046,7 @@ function ENT:OnTakeDamage(dmg)
 			end
 			self.Flinches = math.min(12,self.Flinches + 1)
 			if dmer.Kuzushi then
-			self:PlaySequenceAndMove("flinch_kuzushi_b_leg_l",1)
+			self:PlaySequenceAndMove("flinch_leg_lvl2_l",1)
 			else
 			self:PlaySequenceAndMove("flinch_leg_lvl2_l",1)
 			end
@@ -10074,7 +10074,7 @@ function ENT:OnTakeDamage(dmg)
 			end
 			self.Flinches = math.min(12,self.Flinches + 1)
 			if dmer.Kuzushi then
-			self:PlaySequenceAndMove("flinch_kuzushi_b_leg_r",1)
+			self:PlaySequenceAndMove("flinch_leg_lvl2_r",1)
 			else
 			self:PlaySequenceAndMove("flinch_leg_lvl2_r",1)
 			end
