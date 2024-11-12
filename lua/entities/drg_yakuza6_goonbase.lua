@@ -4,7 +4,7 @@ ENT.Base = "drgbase_nextbot"
 -- Editables --
 ENT.PrintName = "Yakuza"
 ENT.Category = "Yakuza 6"
-ENT.Models = {"models/yakuza6/goonshare.mdl"}
+ENT.Models = {"models/yakuza6/allshare.mdl"}
 ENT.CollisionBounds = Vector(13, 13, 74)
 ENT.SpawnHealth = math.random(50,200)
 ENT.ShoveResistance = true
@@ -116,9 +116,9 @@ ENT.PossessionMovement = POSSESSION_MOVE_CUSTOM
 ENT.PossessionViews = {{offset = Vector(0, 0, 30),distance = 100,eyepos=false},{offset = Vector(7.5, 0, 0),distance = 0,eyepos = true}}
 ENT.PossessionBinds = {
 	[IN_ATTACK] = {{coroutine = true,onkeydown = function(self)
-	if self.Normal or self.Tackle then
+	if self.Normal then
 		//self.Attacking = true
-		self.Damage = 15
+		self.Damage = 25
 		self.SetupType = DMG_GENERIC
 		self:PlaySequenceAndMove("cmb01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 	elseif self.KBox then
@@ -143,12 +143,12 @@ ENT.PossessionBinds = {
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("mnt_cmbpunch01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("krt_cmbpunch01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		else
 		//self.Attacking = true
 		self.Damage = 15
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("mnt_cmb01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("krt_cmb01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 	elseif self.Pnc then
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
@@ -605,11 +605,25 @@ ENT.PossessionBinds = {
 		self:AttackReset()
 		end
 	elseif self.Tackle then
+		if self:GetPossessor():KeyDown(IN_MOVERIGHT) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("tac_tackle_miss",1)
+		self:PlaySequenceAndMove("tac_atk_hook",1)
 		self:AttackReset()
+		elseif self:GetPossessor():KeyDown(IN_FORWARD) then
+		//self.Attacking = true
+		self.Damage = 25
+		self.SetupType = DMG_FALL
+		self:PlaySequenceAndMove("tac_atk_punch_3ren",1)
+		self:AttackReset()
+		else
+		//self.Attacking = true
+		self.Damage = 25
+		self.SetupType = DMG_GENERIC
+		self:PlaySequenceAndMove("tac_atk_run",1)
+		self:AttackReset()
+		end	
 	elseif self.Cpr then
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
 		//self.Attacking = true
@@ -635,13 +649,13 @@ ENT.PossessionBinds = {
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_FALL
-		self:PlaySequenceAndMove("mnt_atk_turning_kick",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("krt_atk_turning_kick",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		else
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("mnt_atk_knee",1)
+		self:PlaySequenceAndMove("krt_atk_knee",1)
 		self:AttackReset()
 		end
 	elseif self.Pnc then
@@ -1518,7 +1532,7 @@ end
 function ENT:OnLandOnGround()
 	if self:IsDead() or self:IsDown() or self.Downed then return end
 	self:CICO(function(self, delay)
-		self:EmitSound("yakuza0/down2.wav")
+		self:EmitSound("common/body2.wav")
 		self:PlaySequenceAndMove("land",1)
 	end)
 end
@@ -2068,11 +2082,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self:AttackReset()
 		end)
 	end
-	if e == "mnt_cmb01trans" then
+	if e == "krt_cmb01trans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_FALL
-		self:PlaySequenceAndMove("mnt_cmb02",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+		self:PlaySequenceAndMove("krt_cmb02",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Angr or self.Heat then
 		self:SetCooldown("GoonAttack",math.random(self.HeatAtkCooldown1,self.HeatAtkCooldown2))
 		else
@@ -2081,11 +2095,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self:AttackReset()
 		end)
 	end
-	if e == "mnt_cmbp01trans" then
+	if e == "krt_cmbp01trans" then
 		self:CICO(function()
 		self.Damage = 35
 		self.SetupType = DMG_FALL
-		self:PlaySequenceAndMove("mnt_cmbpunch02",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+		self:PlaySequenceAndMove("krt_cmbpunch02",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Angr or self.Heat then
 		self:SetCooldown("GoonAttack",math.random(self.HeatAtkCooldown1,self.HeatAtkCooldown2))
 		else
@@ -5796,17 +5810,25 @@ function ENT:Yakuza_Melee(enemy)
 	self:AttackReset()
 	end
 	elseif self.Tackle then
-	local att = math.random(1,2)
+	local att = math.random(1,2,3,4)
 	if att==1 then
 	self.Damage = 15
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("cmb01",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("tac_atk_hook",1)
 	self:AttackReset()
 	elseif att==2 then
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("tac_tackle_miss",1)
 	self:AttackReset()
+	elseif att==3 then
+	self.Damage = 25
+	self.SetupType = DMG_GENERIC
+	self:PlaySequenceAndMove("tac_atk_punch_3ren")
+    elseif att==4 then
+	self.Damage = 25
+	self.SetupType = DMG_GENERIC
+	self:PlaySequenceAndMove("tac_atk_run")
 	end
 	elseif self.Cpr then
 	local att = math.random(1,4)
@@ -5836,22 +5858,22 @@ function ENT:Yakuza_Melee(enemy)
 	if att==1 then
 	self.Damage = 15
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("mnt_cmb01",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("krt_cmb01",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==2 then
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("mnt_cmbpunch01",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("krt_cmbpunch01",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==3 then
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("mnt_atk_knee",1)
+	self:PlaySequenceAndMove("krt_atk_knee",1)
 	self:AttackReset()
 	elseif att==4 then
 	self.Damage = 25
 	self.SetupType = DMG_FALL
-	self:PlaySequenceAndMove("mnt_atk_turning_kick",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("krt_atk_turning_kick",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	end
 	elseif self.Pnc then
@@ -7891,17 +7913,17 @@ function ENT:Stance()
 	self.ShiftAnimation = "kbx_shift"
 	self.ShiftRunAnimation = "kbx_run"
 	elseif self.Karate then
-	self.ShiftIdleAnimation = "mnt_shift_idle"
-	self.ShiftAnimation = "mnt_shift"
-	self.ShiftRunAnimation = "mnt_run"
-	self.GuardStartAnimation = "mnt_guard_st"
-	self.GuardLoopAnimation = "mnt_guard_lp"
-	self.GuardEndAnimation = "mnt_guard_en"
-	self.GuardHitAnimation = "mnt_guard_hit"
+	self.ShiftIdleAnimation = "krt_shift_idle"
+	self.ShiftAnimation = "krt_shift"
+	self.ShiftRunAnimation = "krt_run"
+	self.GuardStartAnimation = "krt_guard_st"
+	self.GuardLoopAnimation = "krt_guard_lp"
+	self.GuardEndAnimation = "krt_guard_en"
+	self.GuardHitAnimation = "krt_guard_hit"
 	elseif self.Tackle then
 	self.ShiftIdleAnimation = "tac_shift_idle"
 	self.ShiftAnimation = "tac_shift"
-	self.ShiftRunAnimation = "run"
+	self.ShiftRunAnimation = "tac_run"
 	elseif self.Cpr then
 	self.ShiftIdleAnimation = "cpr_shift_idle"
 	self.ShiftAnimation = "cpr_shift"
