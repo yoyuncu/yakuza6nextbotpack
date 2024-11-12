@@ -3418,7 +3418,7 @@ ENT.PossessionBinds = {
 	end
 	end}},
 	[KEY_2] = {{coroutine = true,onbuttondown=function(self)
-		if not self.Combat and not self.Rush then
+		if not self.Combat and self.Rush then
 		self.Dragon = false
 		self.Rush = true
 		self.Beast = false
@@ -4177,7 +4177,7 @@ ENT.PossessionBinds = {
 	end
 	end
 	end,onbuttondown=function(self)
-		if not self.Combat and not self.Beast then
+		if not self.Combat and self.Beast then
 		self.Dragon = false
 		self.Rush = false
 		self.Beast = true
