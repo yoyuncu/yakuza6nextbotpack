@@ -150,17 +150,17 @@ ENT.PossessionBinds = {
 		self.SetupType = DMG_GENERIC
 		self:PlaySequenceAndMove("krt_cmb01",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
-	elseif self.Pnc then
+	elseif self.Inf then
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
 		//self.Attacking = true
 		self.Damage = 15
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb01_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("inf_cmb01_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		else
 		//self.Attacking = true
 		self.Damage = 15
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb01_a",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("inf_cmb01_a",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
 	elseif self.Sir then
 		if self:GetPossessor():KeyDown(IN_BACK) then
@@ -658,11 +658,11 @@ ENT.PossessionBinds = {
 		self:PlaySequenceAndMove("krt_atk_knee",1)
 		self:AttackReset()
 		end
-	elseif self.Pnc then
+	elseif self.Inf then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_NEVERGIB
-		self:PlaySequenceAndMove("pnc_atk_heavy",1)
+		self:PlaySequenceAndMove("inf_atk_heavy",1)
 		self:AttackReset()
 	elseif self.Sir then
 		if self:GetPossessor():KeyDown(IN_MOVELEFT) then
@@ -1375,7 +1375,7 @@ ENT.PossessionBinds = {
 		self:SetCooldown("DodgeAnim",0.5)
 		self:AttackReset()
 		self.Dodge = true
-		self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+		self:EmitSound("common/sway"..math.random(3)..".wav")
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
 		self:PlaySequenceAndMove(self.SwayForwardAnimation,1,self.PossessionFaceForward)
 		self:SetCooldown("KuzeAttack",0)
@@ -1410,7 +1410,7 @@ ENT.PossessionBinds = {
 	end
 	end}},
 }
-ENT.IdleAnimation = "idle"..math.random(1,2)
+ENT.IdleAnimation = "stand_idle"
 ENT.WalkAnimation = "walk"..math.random(1,2,3)
 ENT.RunAnimation = "enc_run_a"
 ENT.JumpAnimation = "fall"
@@ -1494,7 +1494,7 @@ function ENT:CustomInitialize()
 	elseif moveset==7 then
 	self.Sir = true
 	elseif moveset==8 then
-	self.Pnc = true
+	self.inf = true
 	elseif moveset==9 then
 	self.Iha = true
 	end
@@ -1555,18 +1555,18 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 				if self.Boss then
 				self:EmitSound("yakuza0/weapons/fists/boss/hit"..math.random(4)..".wav")
 				else
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
-	if e == "wpn_attack" or e == "batattack" or e == "kattack" or e == "lumattack" or e == "couch" then
+	if e == "spinattack" or e == "batattack" or e == "kattack" or e == "lumattack" or e == "couch" then
 		self.Attacking = false
 		self.Swinging = false
 		if not IsValid(self.Weapon) and not IsValid(self.Chair) then
-			self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+			self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 		else
 		self:Attack({
 			damage = self.WeaponDamage,
@@ -1579,23 +1579,23 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 				if #self.WeaponHitSounds > 0 then
 					self:EmitSound(self.WeaponHitSounds[math.random(#self.WeaponHitSounds)])
 				else
-					self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+					self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				end
 			else
 				if #self.WeaponSwingSounds > 0 then
 					self:EmitSound(self.WeaponSwingSounds[math.random(#self.WeaponSwingSounds)])
 				else
-					self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+					self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 				end
 			end
 		end)
 		end
 	end
-	if e == "wpn_spinattack" then
+	if e == "spinattack" then
 		self.Attacking = false
 		self.Swinging = false
 		if not IsValid(self.Weapon) then
-			self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+			self:EmitSound("weapons/fists/swing_kick"..math.random(3)..".wav")
 		else
 		self:Attack({
 			damage = self.WeaponDamage,
@@ -1609,13 +1609,13 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 				if #self.WeaponHitSounds > 0 then
 					self:EmitSound(self.WeaponHitSounds[math.random(#self.WeaponHitSounds)])
 				else
-					self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+					self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				end
 			else
 				if #self.WeaponSwingSounds > 0 then
 					self:EmitSound(self.WeaponSwingSounds[math.random(#self.WeaponSwingSounds)])
 				else
-					self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+					self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 				end
 			end
 		end)
@@ -1625,7 +1625,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		self.Swinging = false
 		if not IsValid(self.Weapon) then
-			self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+			self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 		else
 		self:Attack({
 			damage = self.WeaponDamage,
@@ -1663,13 +1663,13 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self.Attacking = false
 		self.Swinging = false
 		if IsValid(self.Target) then
-		self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+		self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 		self.Target:TakeDamage(10, self, self)
 		end
 	end
 	if e == "spattack_self" then
 		if IsValid(self.Target) then
-		self.Target:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+		self.Target:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 		self:TakeDamage(30, self.Target, self.Target)
 		end
 	end
@@ -1684,11 +1684,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -1703,11 +1703,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -1722,11 +1722,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -1741,11 +1741,11 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -1760,14 +1760,14 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				self:CICO(function()
 				self:PlaySequenceAndMove("sir_atk_shoulder_hit",1)
 				end)
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -1782,14 +1782,14 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		}, 
 		function(self, hit)
 			if #hit > 0 then 
-				self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 				self:CICO(function()
 				self:PlaySequenceAndMove("lee_cmb02_b_hit",1)
 				end)
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
-				self:EmitSound("yakuza0/weapons/fists/swing"..math.random(4)..".wav")
+				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
 			end
 		end)
 	end
@@ -2028,25 +2028,25 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self:AttackReset()
 		end)
 	end
-	if e == "pnc_cmb01atrans" then
+	if e == "inf_cmb01atrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb02_a",1)
+		self:PlaySequenceAndMove("inf_cmb02_a",1)
 		end)
 	end
-	if e == "pnc_cmb02atrans" then
+	if e == "inf_cmb02atrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb03_a",1)
+		self:PlaySequenceAndMove("inf_cmb03_a",1)
 		end)
 	end
-	if e == "pnc_cmb03atrans" then
+	if e == "inf_cmb03atrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb04_a",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+		self:PlaySequenceAndMove("inf_cmb04_a",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Angr or self.Heat then
 		self:SetCooldown("GoonAttack",math.random(self.HeatAtkCooldown1,self.HeatAtkCooldown2))
 		else
@@ -2055,25 +2055,25 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self:AttackReset()
 		end)
 	end
-	if e == "pnc_cmb01btrans" then
+	if e == "inf_cmb01btrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb02_b",1)
+		self:PlaySequenceAndMove("inf_cmb02_b",1)
 		end)
 	end
-	if e == "pnc_cmb02btrans" then
+	if e == "inf_cmb02btrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb03_b",1)
+		self:PlaySequenceAndMove("inf_cmb03_b",1)
 		end)
 	end
-	if e == "pnc_cmb03btrans" then
+	if e == "inf_cmb03btrans" then
 		self:CICO(function()
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("pnc_cmb04_b",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+		self:PlaySequenceAndMove("inf_cmb04_b",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 		if self.Angr or self.Heat then
 		self:SetCooldown("GoonAttack",math.random(self.HeatAtkCooldown1,self.HeatAtkCooldown2))
 		else
@@ -4454,7 +4454,7 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		self:EmitSound("yakuza0/clap"..math.random(4)..".wav")
 	end
 	if e == "knuck" then
-		self:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+		self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 	end
 	if e == "knee" then
 		self:EmitSound("common/body"..math.random(1,2,3)..".wav")
@@ -4995,7 +4995,7 @@ function ENT:Unconceal()
 	self.Tackle = false
 	self.Karate = false
 	self.Sir = false
-	self.Pnc = false
+	self.inf = false
 	self.Iha = false
 	self.Fat = false
 	self.Gor = false
@@ -5876,22 +5876,22 @@ function ENT:Yakuza_Melee(enemy)
 	self:PlaySequenceAndMove("krt_atk_turning_kick",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	end
-	elseif self.Pnc then
+	elseif self.Inf then
 	local att = math.random(1,3)
 	if att==1 then
 	self.Damage = 15
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("pnc_cmb01_a",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("inf_cmb01_a",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==2 then
 	self.Damage = 15
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("pnc_cmb01_b",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("inf_cmb01_b",1,function(self,cycle)if cycle < 0.5 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==3 then
 	self.Damage = 25
 	self.SetupType = DMG_NEVERGIB
-	self:PlaySequenceAndMove("pnc_atk_heavy",1)
+	self:PlaySequenceAndMove("inf_atk_heavy",1)
 	self:AttackReset()
 	end
 	elseif self.Sir then
@@ -7940,10 +7940,10 @@ function ENT:Stance()
 	self.GuardLoopAnimation = "jdo_guard_lp"
 	self.GuardEndAnimation = "jdo_guard_en"
 	self.GuardHitAnimation = "jdo_guard_hit"
-	elseif self.Pnc then
-	self.ShiftIdleAnimation = "pnc_shift_idle"
-	self.ShiftAnimation = "pnc_shift"
-	self.ShiftRunAnimation = "run"
+	elseif self.Inf then
+	self.ShiftIdleAnimation = "inf_shift_idle"
+	self.ShiftAnimation = "inf_shift"
+	self.ShiftRunAnimation = "enc_run_a"
 	elseif self.Sir then
 	self.ShiftIdleAnimation = "sir_shift_idle"
 	self.ShiftAnimation = "shift"
@@ -9294,7 +9294,7 @@ function ENT:OnTakeDamage(dmg)
 		if #self.WeaponGuardSounds > 0 then
 			self:EmitSound(self.WeaponGuardSounds[math.random(#self.WeaponGuardSounds)])
 		else
-		self:EmitSound("yakuza0/weapons/fists/guard"..math.random(2)..".wav",85)
+		self:EmitSound("weapons/fists/guard"..math.random(3)..".wav",85)
 		end
 		self:PlaySequenceAndMove(self.GuardHitAnimation,1)
 		end)
@@ -9302,7 +9302,7 @@ function ENT:OnTakeDamage(dmg)
 		self:CICO(function(self)
 			self.Blocking = false
 			self.Flinching = true
-			self:EmitSound("yakuza0/weapons/fists/guard_break.wav",85)
+			self:EmitSound("common/guard_break.wav",85)
 			self:PlaySequenceAndMove("guard_break",1)
 			self:Feare()
 			self.Flinching = false
@@ -10651,7 +10651,7 @@ function ENT:DropChair()
 		elseif moveset==5 then
 		self.Sir = true
 		elseif moveset==6 then
-		self.Pnc = true
+		self.inf = true
 		elseif moveset==7 then
 		self.Iha = true
 		elseif moveset==8 then
@@ -11028,7 +11028,7 @@ function ENT:CustomThink()
 	if self:IsInRange(enemy,self.MeleeAttackRange) then
 		self.Dodge = true
 		self:AttackReset()
-		self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+		self:EmitSound("common/sway"..math.random(3)..".wav")
 		local sway = math.random(1,3)
 		if sway==1 then
 		self:CICO(function(self)
@@ -11064,7 +11064,7 @@ function ENT:CustomThink()
 	elseif self:IsInRange(enemy,self.RangeAttackRange) and not self:IsInRange(enemy,self.MeleeAttackRange) then
 		self.Dodge = true
 		self:AttackReset()
-		self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+		self:EmitSound("common/sway"..math.random(3)..".wav")
 		local sway = math.random(1,4)
 		if sway==1 then
 		self:CICO(function(self)

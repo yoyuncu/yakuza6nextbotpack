@@ -3810,7 +3810,7 @@ ENT.PossessionBinds = {
 		self.Cmb09 = false
 		self.Cmb09f = false
 		self.Flinching = false
-	self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+	self:EmitSound("common/sway"..math.random(3)..".wav")
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
    self:CICO(function()
 		if self.Rush then
@@ -3871,7 +3871,7 @@ ENT.PossessionBinds = {
 	if self:GetCooldown("KiryuDodgeAnim")<=0 and not self.Dodge and not self.Dodge2 and not self.Dodge3 and not self.Dodge3D and self.Cmb01 and not self.Cmb02 and not self.Cmb03 and not self.Cmb04 and not self.Cmb05 and not self.Cmb06 and not self.Cmb07 and not self.Cmb08 and not self.Cmb09 and not self.Cmb09f and not self.Flinching then
 		self.Attacking = false
 		self.Dodge = true
-	self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+	self:EmitSound("common/sway"..math.random(3)..".wav")
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
 		self:CICO(function()
 		if self.Beast then
@@ -4042,7 +4042,7 @@ ENT.PossessionBinds = {
 	if self:GetCooldown("KiryuDodgeAnim")<=0 and not self.Dodge2 and self.Dodge3 and not self.Dodge3D and (self.Rush or self.Dragon) then
 		self.Attacking = false
 		self.Dodge3D = true
-	self:EmitSound("yakuza0/sway"..math.random(3)..".wav")
+	self:EmitSound("common/sway"..math.random(3)..".wav")
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
 		self:SetCooldown("KiryuDodgeAnim",0.2)
    self:CICO(function()
@@ -7185,7 +7185,7 @@ function ENT:OnTakeDamage(dmg)
 	local ent = dmg:GetAttacker()
   	ent:CICO(function(ent)
 	ent.Attacking = false
-	ent:EmitSound("yakuza0/weapons/fists/guard_break.wav",85)
+	ent:EmitSound("common/guard_break.wav",85)
 	ent:PlaySequenceAndMove("guard_break")
 	end)
    end
@@ -7230,7 +7230,7 @@ function ENT:OnTakeDamage(dmg)
 				self.HeatC = math.min(100,self.HeatC + dmg:GetDamage())
 				end
 		self:CICO(function(self)
-		self:EmitSound("yakuza0/weapons/fists/guard"..math.random(2)..".wav",85)
+		self:EmitSound("weapons/fists/guard"..math.random(2)..".wav",85)
 				if self.Rush then
 				self:PlaySequenceAndMove("rush_guard_hit",1)
 				elseif self.Dragon then
@@ -7241,7 +7241,7 @@ function ENT:OnTakeDamage(dmg)
 		self:CICO(function(self)
 			self.Blocking = false
 			self.Flinching = true
-			self:EmitSound("yakuza0/weapons/fists/guard_break.wav",85)
+			self:EmitSound("common/guard_break.wav",85)
 			self:PlaySequenceAndMove("guard_break",1)
 			self.Flinching = false
 		end)
@@ -9347,7 +9347,7 @@ for k,v in pairs(ents.FindInSphere(self.BoundPos:LocalToWorld(Vector(0,0,0)), 46
 	d:SetDamagePosition( self.BoundPos:GetPos() ) 
 	v:TakeDamageInfo(d)
 	v.Collateral = true
-	self.BoundPos:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+	self.BoundPos:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 	end
 	if self.Bounding2 and not v.Collateral and self.BoundPos:GetPos():Distance(v:GetPos()) < 45 and self:Disposition(v) == D_HT then
 	local d = DamageInfo()
@@ -9358,7 +9358,7 @@ for k,v in pairs(ents.FindInSphere(self.BoundPos:LocalToWorld(Vector(0,0,0)), 46
 	d:SetDamagePosition( self.BoundPos:GetPos() ) 
 	v:TakeDamageInfo(d)
 	v.Collateral = true
-	self.BoundPos:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+	self.BoundPos:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 	end
 	if self.Bounding3 and not v.Collateral and self.BoundPos:GetPos():Distance(v:GetPos()) < 45 and self:Disposition(v) == D_HT then
 	local d = DamageInfo()
@@ -9369,7 +9369,7 @@ for k,v in pairs(ents.FindInSphere(self.BoundPos:LocalToWorld(Vector(0,0,0)), 46
 	d:SetDamagePosition( self.BoundPos:GetPos() ) 
 	v:TakeDamageInfo(d)
 	v.Collateral = true
-	self.BoundPos:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+	self.BoundPos:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 	end
 	if self.Bounding4 and not v.Collateral and self.BoundPos:GetPos():Distance(v:GetPos()) < 45 and self:Disposition(v) == D_HT then
 	local d = DamageInfo()
@@ -9380,7 +9380,7 @@ for k,v in pairs(ents.FindInSphere(self.BoundPos:LocalToWorld(Vector(0,0,0)), 46
 	d:SetDamagePosition( self.BoundPos:GetPos() ) 
 	v:TakeDamageInfo(d)
 	v.Collateral = true
-	self.BoundPos:EmitSound("yakuza0/weapons/fists/hit"..math.random(4)..".wav")
+	self.BoundPos:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
 	end
 end
 end
