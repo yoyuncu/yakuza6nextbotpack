@@ -162,30 +162,30 @@ ENT.PossessionBinds = {
 		self.SetupType = DMG_GENERIC
 		self:PlaySequenceAndMove("inf_cmb01_a",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
 		end
-	elseif self.Sir then
+	elseif self.Zkc then
 		if self:GetPossessor():KeyDown(IN_BACK) then
 		//self.Attacking = true
 		self.Damage = 10
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("sir_atk_rendapunch",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_upper",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		elseif self:GetPossessor():KeyDown(IN_FORWARD) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("sir_atk_kick",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_hook",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		elseif self:GetPossessor():KeyDown(IN_MOVERIGHT) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("sir_atk_dempsey",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_kick_r",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
-		else
+		elseif self:GetPossessor():KeyDown(IN_MOVELEFT) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_FALL
-		self:PlaySequenceAndMove("sir_atk_shoulder_miss",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_kick_l",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		end
 	elseif self.Judo then
@@ -290,23 +290,6 @@ ENT.PossessionBinds = {
 		end
 	elseif self.JkS then
 		if self:GetPossessor():KeyDown(IN_FORWARD) then
-		//self.Attacking = true
-		self.Damage = 10
-		self.SetupType = DMG_GENERIC
-		self.WeaponDamage = 15
-		if self.WeaponType == 0 then
-			self.WeaponDamageType = DMG_GENERIC
-		elseif self.WeaponType == 1 then
-			self.WeaponDamageType = DMG_SLASH
-		elseif self.WeaponType == 2 then
-			self.WeaponDamageType = DMG_SHOCK
-		elseif self.WeaponType == 3 then
-			self.WeaponDamageType = DMG_POISON
-		elseif self.WeaponType == 4 then
-			self.WeaponDamageType = DMG_BLAST
-		end
-		self:PlaySequenceAndMove("jak_sword_cmb01_b",1,function(self,cycle)if cycle < 0.5 then self:PossessionFaceForward() end end)
-		else
 		//self.Attacking = true
 		self.Damage = 10
 		self.SetupType = DMG_GENERIC
@@ -664,30 +647,30 @@ ENT.PossessionBinds = {
 		self.SetupType = DMG_NEVERGIB
 		self:PlaySequenceAndMove("inf_atk_heavy",1)
 		self:AttackReset()
-	elseif self.Sir then
+	elseif self.Zkc then
 		if self:GetPossessor():KeyDown(IN_MOVELEFT) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("sir_atk_away_kick_l",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_kick_l",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		elseif self:GetPossessor():KeyDown(IN_MOVERIGHT) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_GENERIC
-		self:PlaySequenceAndMove("sir_atk_away_kick_r",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_kick_r",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		elseif self:GetPossessor():KeyDown(IN_FORWARD) then
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_ALWAYSGIB
-		self:PlaySequenceAndMove("sir_atk_away_upper",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_upper",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		else
 		//self.Attacking = true
 		self.Damage = 25
 		self.SetupType = DMG_FALL
-		self:PlaySequenceAndMove("sir_atk_away_hook",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
+		self:PlaySequenceAndMove("zkc_atk_away_hook",1,function(self,cycle)if cycle < 0.25 then self:PossessionFaceForward() end end)
 		self:AttackReset()
 		end
 	elseif self.Judo then
@@ -854,18 +837,6 @@ ENT.PossessionBinds = {
 		self.Damage = 30
 		self.SetupType = DMG_AIRBOAT
 		self:PlaySequenceAndMove("jak_atk_tobigeri",1)
-		self:AttackReset()
-		elseif self:GetPossessor():KeyDown(IN_BACK) then
-		//self.Attacking = true
-		self.Damage = 30
-		self.SetupType = DMG_CRUSH
-		self:PlaySequenceAndMove("jak_atk_senpukyaku",1)
-		self:AttackReset()
-		else
-		//self.Attacking = true
-		self.Damage = 25
-		self.SetupType = DMG_ALWAYSGIB
-		self:PlaySequenceAndMove("jak_atk_nirenkiyaku",1)
 		self:AttackReset()
 		end
 	elseif self.Bat then
@@ -1422,7 +1393,7 @@ ENT.GuardStartAnimation = "guard_st"
 ENT.GuardLoopAnimation = "guard_lp"
 ENT.GuardEndAnimation = "guard_en"
 ENT.GuardHitAnimation = "guard_hit"
-ENT.ShiftIdleAnimation = "shift_idle"..math.random(1,2)
+ENT.ShiftIdleAnimation = "shift_idle"
 ENT.ShiftAnimation = "shift"
 ENT.ShiftRunAnimation = "enc_run_a"
 	
@@ -1492,9 +1463,9 @@ function ENT:CustomInitialize()
 	elseif moveset==6 then
 	self.Karate = true
 	elseif moveset==7 then
-	self.Sir = true
+	self.Zkc = true
 	elseif moveset==8 then
-	self.inf = true
+	self.Inf = true
 	elseif moveset==9 then
 	self.Iha = true
 	end
@@ -1742,28 +1713,6 @@ function ENT:HandleAnimEvent(a,b,c,d,e)
 		function(self, hit)
 			if #hit > 0 then 
 				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
-				local m = math.random(4)
-				if m==3 then self.ShouldTaunt = true end
-			else
-				self:EmitSound("weapons/fists/swing"..math.random(4)..".wav")
-			end
-		end)
-	end
-	if e == "sirattack" then
-		self.Attacking = false
-		self.Swinging = false
-		self:Attack({
-			damage = self.Damage,
-			type = self.SetupType,
-			range=30,
-			viewpunch = Angle(20, math.random(-10, 10), 0),
-		}, 
-		function(self, hit)
-			if #hit > 0 then 
-				self:EmitSound("weapons/fists/hit"..math.random(4)..".wav")
-				self:CICO(function()
-				self:PlaySequenceAndMove("sir_atk_shoulder_hit",1)
-				end)
 				local m = math.random(4)
 				if m==3 then self.ShouldTaunt = true end
 			else
@@ -4994,8 +4943,8 @@ function ENT:Unconceal()
 	self.KBox = false
 	self.Tackle = false
 	self.Karate = false
-	self.Sir = false
-	self.inf = false
+	self.Zkc = false
+	self.Inf = false
 	self.Iha = false
 	self.Fat = false
 	self.Gor = false
@@ -5894,48 +5843,32 @@ function ENT:Yakuza_Melee(enemy)
 	self:PlaySequenceAndMove("inf_atk_heavy",1)
 	self:AttackReset()
 	end
-	elseif self.Sir then
-	local att = math.random(1,8)
+	elseif self.Zkc then
+	local att = math.random(1,5)
 	if att==1 then
 	self.Damage = 25
 	self.SetupType = DMG_FALL
-	self:PlaySequenceAndMove("sir_atk_away_hook",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("zkc_atk_away_hook",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==2 then
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("sir_atk_away_kick_l",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("zkc_atk_away_kick_l",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==3 then
 	self.Damage = 25
 	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("sir_atk_away_kick_r",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("zkc_atk_away_kick_r",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==4 then
 	self.Damage = 25
 	self.SetupType = DMG_ALWAYSGIB
-	self:PlaySequenceAndMove("sir_atk_away_upper",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
+	self:PlaySequenceAndMove("zkc_atk_away_upper",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	self:AttackReset()
 	elseif att==5 then
-	self.Damage = 25
-	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("sir_atk_dempsey",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
-	self:AttackReset()
-	elseif att==6 then
-	self.Damage = 25
-	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("sir_atk_kick",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
-	self:AttackReset()
-	elseif att==7 then
-	self.Damage = 10
-	self.SetupType = DMG_GENERIC
-	self:PlaySequenceAndMove("sir_atk_rendapunch",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
-	self:AttackReset()
-	elseif att==8 then
-	self.Damage = 25
-	self.SetupType = DMG_FALL
-	self:PlaySequenceAndMove("sir_atk_shoulder_miss",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
-	self:AttackReset()
+	self.Damage = 30
+	self.SetupType = DMG_ALWAYSGIB
+	self:PlaySequenceAndMove("zkc_atk_away_knee",1,function(self,cycle)if cycle < 0.25 then self:FaceEnemy() end end)
 	end
 	elseif self.Judo then
 	local att = math.random(1,3)
@@ -6117,7 +6050,7 @@ function ENT:Yakuza_Melee(enemy)
 	self:AttackReset()
 	end
 	elseif self.Jak then
-	local att = math.random(1,6)
+	local att = math.random(1,5)
 	if att==1 then
 	self.Damage = 10
 	self.SetupType = DMG_GENERIC
@@ -6129,21 +6062,16 @@ function ENT:Yakuza_Melee(enemy)
 	self:PlaySequenceAndMove("jak_atk_kungfupunch",1)
 	self:AttackReset()
 	elseif att==3 then
-	self.Damage = 25
-	self.SetupType = DMG_ALWAYSGIB
-	self:PlaySequenceAndMove("jak_atk_nirenkiyaku",1)
+    self.Damage = 25
+	self.SetupType = DMG_GENERIC
+	self:PlaySequenceAndMove("jak_atk_2ren",1)
 	self:AttackReset()
 	elseif att==4 then
-	self.Damage = 30
-	self.SetupType = DMG_CRUSH
-	self:PlaySequenceAndMove("jak_atk_senpukyaku",1)
-	self:AttackReset()
-	elseif att==5 then
 	self.Damage = 30
 	self.SetupType = DMG_GENERIC
 	self:PlaySequenceAndMove("jak_atk_snakechopsting",1)
 	self:AttackReset()
-	elseif att==6 then
+	elseif att==5 then
 	self.Damage = 30
 	self.SetupType = DMG_AIRBOAT
 	self:PlaySequenceAndMove("jak_atk_tobigeri",1)
@@ -7944,10 +7872,10 @@ function ENT:Stance()
 	self.ShiftIdleAnimation = "inf_shift_idle"
 	self.ShiftAnimation = "inf_shift"
 	self.ShiftRunAnimation = "enc_run_a"
-	elseif self.Sir then
-	self.ShiftIdleAnimation = "sir_shift_idle"
-	self.ShiftAnimation = "shift"
-	self.ShiftRunAnimation = "run"
+	elseif self.Zkc then
+	self.ShiftIdleAnimation = "zkc_shift_idle"
+	self.ShiftAnimation = "zkc_shift"
+	self.ShiftRunAnimation = "zkc_run"
 	elseif self.Gor then
 	self.ShiftIdleAnimation = "gor_shift_idle"
 	self.ShiftAnimation = "gor_shift"
@@ -8045,7 +7973,7 @@ function ENT:Stance()
 	elseif self.Jak then
 	self.ShiftIdleAnimation = "jak_shift_idle"
 	self.ShiftAnimation = "jak_shift"
-	self.ShiftRunAnimation = "rik_run"
+	self.ShiftRunAnimation = "jak_run"
 	self.SwayBackAnimation = "jak_sway_b"
 	self.SwayForwardAnimation = "jak_sway_f"
 	self.SwayRightAnimation = "jak_sway_r"
@@ -8057,8 +7985,12 @@ function ENT:Stance()
 	elseif self.JkS then
 	self:DrawWeapon()
 	self.ShiftIdleAnimation = "jak_sword_shift_idle"
-	self.ShiftAnimation = "jak_sword_shift"
-	self.ShiftRunAnimation = "run"
+	self.ShiftAnimation = "jak_shift"
+	self.ShiftRunAnimation = "jak_run"
+	self.SwayBackAnimation = "jak_sway_b"
+	self.SwayForwardAnimation = "jak_sway_f"
+	self.SwayRightAnimation = "jak_sway_r"
+	self.SwayLeftAnimation = "jak_sway_l"
 	self.GuardStartAnimation = "jak_sword_guard_st"
 	self.GuardLoopAnimation = "jak_sword_guard_lp"
 	self.GuardEndAnimation = "jak_sword_guard_en"
@@ -10649,9 +10581,9 @@ function ENT:DropChair()
 		elseif moveset==4 then
 		self.Tackle = true
 		elseif moveset==5 then
-		self.Sir = true
+		self.Zkc = true
 		elseif moveset==6 then
-		self.inf = true
+		self.Inf = true
 		elseif moveset==7 then
 		self.Iha = true
 		elseif moveset==8 then

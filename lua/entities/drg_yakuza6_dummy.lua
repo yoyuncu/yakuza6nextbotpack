@@ -55,7 +55,7 @@ if SERVER then
         elseif moveset==5 then
         self.Karate = true
         elseif moveset==6 then
-        self.Pnc = true
+        self.Inf = true
         elseif moveset==7 then
         self.Iha = true
         elseif moveset==8 then
