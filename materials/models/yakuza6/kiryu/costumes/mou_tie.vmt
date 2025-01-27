@@ -4,7 +4,7 @@
     "$bumpmap"     "models/yakuza6/kiryu/costumes/kiryu_mou_yshirts_tn"
 	"$nocull" 0
 	"$color2" "[.2 .2 .2]"
-    "$detail"      "models/common/c_com_color_rd"
+    "$detail"      "models/common/c_com_color_rd_09"
 	"$detailscale"	"100 100"	
     "$halflambert" "1"
 	"$phong" "1"
