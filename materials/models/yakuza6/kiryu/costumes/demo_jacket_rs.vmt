@@ -13,5 +13,5 @@
 	"$phongalbedotint" "1"
     "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_demo_jacket_rm"
 	"$phongfresnelranges"	"[1 2.5 3]"	
-	"$phongtint" "[1 1 1]"
+	"$phongtint" "{0 0 100}"
 }

@@ -9,8 +9,8 @@
 	
 
 	$phong				"1"
-	$phongboost			".3"
-	$phongexponent			"15"
+	$phongboost			".0"
+	$phongexponent			"40"
 	$phongfresnelranges		"[6 9 10]"
 
 "$allowAlphaToCoverage" 0

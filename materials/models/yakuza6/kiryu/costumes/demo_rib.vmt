@@ -3,6 +3,7 @@
 	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_demo"
 	"$bumpmap" "models/yakuza6/kiryu/costumes/kiryu_demo_tn"
 	"$additive" 0
+	"$color2" "[.6 .6 .6]"
 	"$nocull" 1
         "$detail"	"models/yakuza6/kiryu/costumes/kiryu_demo_rib_rd"
 	"$detailscale"	"[50.7 50.7]"

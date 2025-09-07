@@ -2,8 +2,10 @@
 {
 	"$basetexture" "models/common/c_am_com_suits_mou"
     "$bumpmap"     "models/common/c_am_com_suits_tn"
+	"$detail"      "models/common/c_am_com_suits_ao"
+    "$detailscale" "[1 1]"
 	"$nocull" 0
-	"$color2" "[1 1 1]"	
+	"$color2" "[.8 .8 .8]"	
     "$halflambert" "1"
 	"$phong" "1"
     "$phongexponenttexture" "models/common/c_am_com_suits_mt"

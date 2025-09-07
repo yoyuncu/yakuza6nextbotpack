@@ -2,14 +2,15 @@
 {
 	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_demo"
 	"$bumpmap" "models/yakuza6/kiryu/costumes/kiryu_demo_tn"
-    "$color2" "[.4 .4 .4]"
+    "$color2" "[.3 .3 .3]"
 	"$additive" 0
 	"$nocull" 1
     "$detail"	"models/yakuza6/kiryu/costumes/kiryu_demo_hood_rd"
 	"$detailscale"	"[50.7 50.7]"
 			   "$phong" "1"
-			   "$phongboost"	".2"
-			   "$phongexponent" 3
+			   "$phongboost"	".1"
+			   "$phongexponent" 100
                "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_demo_tn"
 			   "$phongfresnelranges"	"[1 2.5 3]"
+			   "$phongtint" "{0 0 0}"
 }
