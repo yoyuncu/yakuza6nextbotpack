@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_naked_neck"
+	"$bumpmap" "models/yakuza6/kiryu/costumes/kiryu_naked_neck_tn"
+    "$detail"      "models/yakuza6/kiryu/costumes/kiryu_naked_neck_ao"
+    "$detailscale" "[1 1]"
+    "$lightwarptexture" "models/common/skinwarp"
+    $alphatest 1
+    "$allowAlphaToCoverage" 1
+                 "$phong" "1"
+                 "$phongboost" ".1"
+                 "$phongexponent" "10"
+                 "$phongfresnelranges" "[1 2.5 3]"
+				 "$color2" "[.8 .8 .8]"
+    "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_naked_neck_mt"
+}

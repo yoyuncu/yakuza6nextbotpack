@@ -1,0 +1,17 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_demo_hood_rd"
+	"$bumpmap"     "models/yakuza6/kiryu/costumes/kiryu_demo_hood_rt"
+	"$basetexturetransform"	"center 1 1 scale 50.7 50.7 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 50.7 50.7 rotate 0 translate 0 0"
+	"$additive"	"1"
+	"$allowAlphaToCoverage" 1
+	"$color2"	"[0.0 0.0 0.0]"
+	"$phong" "1"
+	"$phongboost" ".1"
+	"$phongexponent" 10
+	"$phongalbedotint" "1"
+    "$phongexponenttexture" "models/yakuza6/kiryu/costumes/kiryu_demo_hood_rm"
+	"$phongfresnelranges"	"[1 2.5 3]"	
+	"$phongtint" "[1 1 1]"
+}

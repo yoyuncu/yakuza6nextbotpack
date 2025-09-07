@@ -1,0 +1,18 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/yakuza6/kiryu/costumes/kiryu_face_mou"
+    "$bumpmap"     "models/yakuza6/kiryu/costumes/kiryu_face_mou_tn"
+    "$detail"      "models/yakuza6/kiryu/kiryu_face_ao"
+    "$detailscale" "[1 1]"
+    $color2 "[.8 .8 .8]"	
+    "$lightwarptexture" "models/common/skinwarp"
+    "$halflambert" "1"
+    "$phong" "1"
+    "$phongboost" ".1"
+    "$phongexponent" "10"
+    "$phongfresnelranges" "[1 2.5 3]"
+    "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_face_mt"
+    $rimlight 1
+    $rimlightboost 1
+    $rimmask 1
+}
