@@ -1,0 +1,10 @@
+patch {
+	include "materials/models/yakuza6/kiryu/hair.vmt"
+	replace {
+		$alphatest 0
+	}
+	insert {
+		$translucent 1
+		$rimlight 1
+	}
+}

@@ -3,7 +3,7 @@
 	"$basetexture" "models/yakuza6/kiryu/kiryu_body"
     "$bumpmap"     "models/common/c_am_com_body_tn"
     "$detail"      "models/common/c_am_com_body_ao"
-    "$detailscale" "1"
+    "$detailscale" "[1 1]"
     $color2 "[.8 .8 .8]"
     "$lightwarptexture" "models/common/skinwarp"
     "$halflambert" "1"

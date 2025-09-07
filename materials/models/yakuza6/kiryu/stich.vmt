@@ -2,6 +2,8 @@
 {
 	"$basetexture" "models/yakuza6/kiryu/kiryu_stich"
     "$bumpmap"     "models/yakuza6/kiryu/kiryu_stich_tn"
+	"$detail"      "models/yakuza6/kiryu/kiryu_stich_ao"	
+	"$detailscale"	"[1 1]"
 	$translucent 1
 	"$phong" "1"
 	"$phongboost" "1"

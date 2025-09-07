@@ -2,8 +2,8 @@
 {
 	"$basetexture" "models/common/c_com_suit_rd"
 	"$bumpmap"     "models/common/c_com_suit_rt"
-	"$basetexturetransform"	"center 1 1 scale 25 25 rotate 0 translate 0 0"
-	"$bumptransform"	"center .5 .5 scale 25 25 rotate 0 translate 0 0"
+	"$basetexturetransform"	"center 1 1 scale 120 120 rotate 0 translate 0 0"
+	"$bumptransform"	"center .5 .5 scale 120 120 rotate 0 translate 0 0"
 	"$additive"	"1"
 	"$allowAlphaToCoverage" 1
 	"$color2"	"[0.0 0.0 0.0]"

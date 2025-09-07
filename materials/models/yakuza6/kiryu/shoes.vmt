@@ -2,6 +2,8 @@
 {
 	"$basetexture" "models/yakuza6/kiryu/kiryu_shoes"
     "$bumpmap"     "models/yakuza6/kiryu/kiryu_shoes_tn"
+    "$detail"      "models/yakuza6/kiryu/kiryu_shoes_ao"	
+	"$detailscale"	"[1 1]"
     "$halflambert" "1"
 	"$phong" "1"
     "$lightwarptexture" "models/common/lightwarp_metallic"

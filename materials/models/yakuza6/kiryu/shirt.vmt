@@ -10,7 +10,7 @@
 	"$phong" "1"
 	"$phongexponent" 10
     "$phongexponenttexture" "models/yakuza6/kiryu/kiryu_shirt_mt"
-    "$phongboost" ".5"
+    "$phongboost" ".100"
 	"$phongfresnelranges" "[1 2.5 3]"
 	"$phongtint" "{140 27 23}"
 }

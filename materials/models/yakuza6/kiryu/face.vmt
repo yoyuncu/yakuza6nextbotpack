@@ -2,6 +2,8 @@
 {
 	"$basetexture" "models/yakuza6/kiryu/kiryu_face"
     "$bumpmap"     "models/yakuza6/kiryu/kiryu_face_tn"
+    "$detail"      "models/yakuza6/kiryu/kiryu_face_ao"
+    "$detailscale" "[1 1]"
     $color2 "[.8 .8 .8]"	
     "$lightwarptexture" "models/common/skinwarp"
     "$halflambert" "1"
